@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<link type="text/css" rel="stylesheet" href="styles_2.css"/>
+
+	</head>
+	<nav>
+		<ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Garden_Birds.html">Garden Birds</a></li>
+            <li><a href="water_birds.html">Water Birds</a></li>
+            <li><a href="sea_birds.html">Sea Birds</a></li>
+            <li><a href="birds_of_prey.html">Birds of Prey</a></li>
+            <li><a href="australia_birds.html">Australian Birds</a></li>
+            <li><a href="garden.html">Bird Friendly Garden</a></li>
+             <li><a href="bird_table_2024.html">Garden Bird Info</a></li>
+             <li><a href="conservation.html">Conservation</a></li>
+	  </ul>
+	  </nav>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garden Bird Photographs</title>
+
+<style>
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-auto-rows: 300px;
+        grid-gap: 10px;
+    }
+    .gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: #b2cefe;
+        background-color: rgba(0,0,0,0.9);
+    }
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+    .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .modal-content img {
+        width: 100%;
+    }
+    .caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+<h2>Garden Bird Photographs</h2>
+
+<div class="gallery">
+    <!-- Placeholder images -->
+    <div class="item">
+        <img src="bird_photos/garden/robin.jpg" alt="Robin" onclick="openModal('Robin', 'Montrose', '2020', 'bird photos/garden/robin.jpg')" class="mediumPictures">
+        <div class="caption">Bird 1<br>Montrose<br>2020</div>
+    </div>
+    <div class="item">
+        <img src="bird_photos/garden/jay.jpg" alt="Jay" onclick="openModal('Jay', 'Montrose', '2020', 'bird photos/garden/jay.jpg')" class="mediumPictures">
+        <div class="caption">Bird 1<br>Location 1<br>Date 1</div>
+    </div>
+    <div class="item">
+        <img src="bird_photos/garden/magpie.jpg" alt="Magpie" onclick="openModal('Magpie', 'Montrose', '2020', 'bird photos/garden/magpie.jpg')" class="mediumPictures">
+        <div class="caption">Bird 1<br>Location 1<br>Date 1</div>
+    </div>
+    <div class="item">
+        <img src="bird_photos/garden/blackcap f.jpg" alt="Blackcap" onclick="openModal('Blackcap (F)', 'Montrose', '2020', 'bird photos/garden/blackcap f.jpg')" class="mediumPictures">
+        <div class="caption">Bird 1<br>Location 1<br>Date 1</div>
+    </div>
+    <div class="item">
+        <img src="bird_photos/garden/bullfinch.jpg" alt="Bullfinch" onclick="openModal('Bullfinch', 'Montrose','2020', 'bird photos/garden/bullfinch.jpg')" class="mediumPictures">
+        <div class="caption">Bullfinch<br>Location 1<br>Date 1</div>
+    </div>
+    <div class="item">
+        <img src="bird_photos/garden/goldfinch m.jpg" alt="Goldfinch" onclick="openModal('Goldfinch', 'Montrose', '2020', 'bird photos/garden/goldfinch m.jpg')" class="mediumPictures">
+        <div class="caption">Goldfinch<br>Location 1<br>Date 1</div>
+    </div>
+
+    <div class="item">
+        <img src="bird_photos/garden/blue tit.jpg" alt="Blue Tit" onclick="openModal('Blue Tit', 'Montrose', '2020', 'bird photos/garden/blue tit.jpg')" class="mediumPictures">
+        <div class="caption">Blue<br>Location 1<br>Date 1</div>
+    </div>
+
+    <div class="item">
+        <img src="bird_photos/garden/great tit.jpg" alt="Bird 2" onclick="openModal('Great Tit', 'Montrose', '2020', 'bird photos/garden/great tit.jpg')" class="mediumPictures">
+        <div class="caption">Bird 1<br>Location 1<br>Date 1</div>
+    </div>
+
+    <div class="item">
+        <img src="bird_photos/garden/long tail tit.jpg" alt="Long Tail Tit" onclick="openModal('Long Tailed Tit', 'Montrose', '2020', 'bird photos/garden/long tail tit.jpg')" class="mediumPictures">
+        <div class="caption">Long Tail Tit<br>Location 1<br>Date 1</div>
+    </div>
+    
+    <div class="item">
+        <img src="bird_photos/garden/wren.jpg" alt="Bird 3" onclick="openModal('Wren', 'Location 3', '2020', 'bird photos/garden/wren.jpg')" class="mediumPictures">
+        <div class="caption">Bird 1<br>Location 1<br>Date 1</div>
+    </div>
+    <div class="item">
+        <img src="bird_photos/garden/green woodpecker.jpg" alt="Green Woodpecker" onclick="openModal('Green Woodpecker', 'Montrose', '2020', 'bird photos/garden/green woodpecker.jpg')" class="mediumPictures">
+        <div class="caption">Bird 1<br>Location 1<br>Date 1</div>
+    </div>
+    <div class="item">
+        <img src="bird_photos/garden/woodpecker.jpg" alt="Woodpecker" onclick="openModal('Woodpecker', 'Location 1', '2020', 'bird photos/garden/woodpecker.jpg')" class="mediumPictures">
+        <div class="caption">Bird 1<br>Location 1<br>Date 1</div>
+    </div>
+    <div class="item">
+        <img src="bird_photos/garden/wood pigeon.jpg" alt="Wood Pigeon" onclick="openModal('Wood Pigeon', 'Montrose', '2020', 'bird photos/garden/wood pigeon.jpg')" class="mediumPictures">
+        <div class="caption">Bird 1<br>Location 1<br>Date 1</div>
+    </div>
+    <div class="item">
+        <img src="bird_photos/garden/nuthatch.jpg" alt="Nuthatch" onclick="openModal('Nuthatch', 'Montrose', '2020', 'bird photos/garden/Nuthatch.jpg')" class="mediumPictures">
+        <div class="caption">Nuthatch<br>Location 1<br>Date 1</div>
+    </div>
+
+    <div class="item">
+        <img src="bird_photos/garden/dunnock.jpg" alt="Dunnock" onclick="openModal('Dunnock', 'Montrose', '2020', 'bird photos/garden/dunnock.jpg')" class="mediumPictures">
+        <div class="caption">Bird 1<br>Location 1<br>Date 1</div>
+    </div>
+    
+    <div class="item">
+        <img src="bird_photos/garden/redwing.jpg" alt="Redwing" onclick="openModal('Redwing', 'Montrose', '2020', 'bird photos/garden/redwing.jpg')" class="mediumPictures">
+        <div class="caption">Bird 1<br>Location 1<br>Date 1</div>
+    </div>
+
+    <div class="item">
+        <img src="bird_photos/garden/blackbird f.jpg" alt="Blackbird(F)" onclick="openModal('Blackbird (F)', 'Montrose', '2020', 'bird photos/garden/blackbird f.jpg')" class="mediumPictures">
+        <div class="caption">Blackbird<br>Location 1<br>Date 1</div>
+    </div>
+
+    <div class="item">
+        <img src="bird_photos/garden/blackbird.jpg" alt="Blackbird (M)" onclick="openModal('Blackbird (M)', 'Montrose', '2020', 'bird photos/garden/blackbird.jpg')" class="mediumPictures">
+        <div class="caption">Blackbird (M)<br>Location 1<br>Date 1</div>
+    </div>
+
+    <div class="item">
+        <img src="bird_photos/garden/jackdaw.jpg" alt="Jackdaw" onclick="openModal('Jackdaw', 'Slimbridge', '2020', 'bird photos/garden/jackdaw.jpg')" class="mediumPictures">
+        <div class="caption">Blackbird (M)<br>Location 1<br>Date 1</div>
+    </div>
+
+    <!-- Repeat for other images -->
+    <!-- You can add more items here -->
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption" class="caption"></div>
+</div>
+
+<script>
+    function openModal(name, location, date, photoSrc) {
+      document.getElementById('myModal').style.display = "block";
+      document.getElementById("img01").src = photoSrc; // Set the source of the clicked photo
+      document.getElementById("caption").innerHTML = name + "<br>" + location + "<br>" + date;
+    }
+
+    function closeModal() {
+      document.getElementById('myModal').style.display = "none";
+}
+
+
+    </script>
+
+</body>
+</html>

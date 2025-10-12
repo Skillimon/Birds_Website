@@ -1,0 +1,34 @@
+/* This section is for the navigation */
+nav {
+    background-color: #ffffff; /* White background */
+    padding: 10px; /* Add padding */
+    margin-bottom: 20px; /* Add margin to separate from other content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display items horizontally */
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333333; /* Dark grey text */
+    padding: 5px 10px; /* Add padding to make the links clickable */
+    border-radius: 5px; /* Rounded corners for links */
+}
+
+nav ul li a:hover {
+    background-color: #f2f2f2; /* Light grey background on hover */
+}
