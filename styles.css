@@ -1,0 +1,153 @@
+body {
+  background-color: #b2cefe;
+    font-family: "Helvetica", sans-serif;
+    color: purple;
+}
+ h1 {
+    color: Azure;
+    font-family: "Times New Roman", serif;
+  }
+
+
+
+
+nav ul {
+    background-color: tomato;
+    border-style: solid;
+    border-color: MediumVioletRed;
+    border-width: 2px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+    nav ul li {
+        list-style-type: none;
+        display: inline;
+        margin-right: 10px;
+        margin-left: 10px;
+        color: PapayaWhip;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: indigo;
+  }
+  nav ul li a:hover {
+    color: #ffefd5;
+  }
+
+
+
+
+.darkerBackground {
+  background-color: #99bbff;
+}
+
+.topDivider {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #F5FFFA;
+  padding-bottom: 10px;
+}
+
+
+.stylishBox {
+  background-color: #c1ebec;
+  color: #A52A2A;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #F5FFFA;
+  border-radius: 10px;
+}
+
+.someSpacing {
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.smallPictures {
+  width: 100px;
+}
+
+.mediumPictures {
+  width: 200px;
+}
+
+
+.tinyPicture {
+    height: 60px;
+    border-radius: 10px;
+    / display: inline;
+}
+
+.card {
+    / display: inline;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #F0FFFF;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: "Trebuchet MS", sans-serif;
+
+}
+.card:hover {
+    border-color: #1E90FF;
+}
+
+#frontPage {
+    background: #48D1CC;
+    /*background: linear-gradient(#b2cefe, #b2cefe, #baed91, #b2cefe );*/
+    background: linear-gradient(to right, #b2cefe, #c1ebec);
+}
+
+#owly {
+  width: 100px;
+  border-radius: 100%;
+}
+#owly:hover {
+  
+  animation-name: rollOver;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes rollOver {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.niceLinks {
+  text-decoration: none;
+  color: #FFFAF0;
+}
+.niceLinks:hover {
+  color: #00FF7F;
+}
+
+/**********************************
+This section is for styling tables
+***********************************/
+table, th, td {
+  border: 1px solid HoneyDew;
+  border-collapse: collapse;
+}
+tr {
+  background-color: PaleTurquoise;
+}
+th, td {
+  vertical-align: top;
+  padding: 5px;
+  text-align: left;
+}
+th {
+  color: purple;
+}
+td {
+  color: purple;
+}
+/********************************/
