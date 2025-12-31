@@ -59,6 +59,27 @@ main{padding-bottom:40px}
 /* Footer */
 .site-footer{font-size:0.9rem;color:var(--muted);padding:18px 0;border-top:1px solid #eef3f8;margin-top:24px}
 
+/* Skip link for keyboard users */
+.skip-link{
+  position:absolute;
+  left:-999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  position:static;
+  left:auto;
+  width:auto;
+  height:auto;
+  background:#fff;
+  padding:0.5rem 1rem;
+  border:2px solid #444;
+  z-index:9999;
+  display:inline-block;
+}
+
 /* Accessibility helpers */
 .sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
 

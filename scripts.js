@@ -56,9 +56,24 @@
 
     // keyboard handler
     keyHandler = function(ev){
-      if(ev.key === 'Escape') closeModal();
+      if(ev.key === 'Escape') { ev.preventDefault(); closeModal(); }
+
+      // Trap focus inside the modal
+      if(ev.key === 'Tab'){
+        const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if(focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if(!ev.shiftKey && document.activeElement === last){ ev.preventDefault(); first.focus(); }
+        if(ev.shiftKey && document.activeElement === first){ ev.preventDefault(); last.focus(); }
+      }
+
+      // Future: keyboard image navigation
       if(ev.key === 'ArrowRight'){
-        // optional: could add next image support later
+        // TODO: advance to next image when implemented
+      }
+      if(ev.key === 'ArrowLeft'){
+        // TODO: go to previous image when implemented
       }
     };
     document.addEventListener('keydown', keyHandler);
@@ -73,6 +88,18 @@
     keyHandler = null;
     if(lastActive && typeof lastActive.focus === 'function') lastActive.focus();
   }
+
+  // make gallery images keyboard accessible (ensure focusable + Enter/Space activation)
+  document.querySelectorAll('.gallery-item img').forEach(function(img){
+    img.setAttribute('tabindex','0');
+    img.setAttribute('role','button');
+    img.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar'){
+        ev.preventDefault();
+        openModal(img.src, img.alt, img.closest('.gallery-item')?.querySelector('.figure-caption')?.innerText);
+      }
+    });
+  });
 
   // expose for older inline usages (backwards compat)
   window.openModal = openModal;

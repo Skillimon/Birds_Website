@@ -1,273 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-		<link type="text/css" rel="stylesheet" href="styles_2.css"/>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australian Bird Photographs</title>
+    <link rel="stylesheet" href="site.css"/>
+  </head>
+  <body>
 
-	</head>
-	<nav>
-		<ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Garden_Birds.html">Garden Birds</a></li>
-            <li><a href="water_birds.html">Water Birds</a></li>
-            <li><a href="sea_birds.html">Sea Birds</a></li>
-            <li><a href="birds_of_prey.html">Birds of Prey</a></li>
-            <li><a href="australia_birds.html">Australian Birds</a></li>
-            <li><a href="garden.html">Bird Friendly Garden</a></li>
-             <li><a href="bird_table_2024.html">Garden Bird Info</a></li>
-             <li><a href="conservation.html">Conservation</a></li>
-	  </ul>
-	  </nav>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-
-<style>
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        grid-auto-rows: 300px;
-        grid-gap: 10px;
-    }
-    .gallery img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        cursor: pointer;
-    }
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        padding-top: 100px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: #b2cefe;
-        background-color: rgba(0,0,0,0.9);
-    }
-    .modal-content {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-    }
-    .close {
-        color: white;
-        position: absolute;
-        top: 10px;
-        right: 25px;
-        font-size: 35px;
-        font-weight: bold;
-        transition: 0.3s;
-        cursor: pointer;
-    }
-    .close:hover,
-    .close:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    .modal-content img {
-        width: 100%;
-    }
-    .caption {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-        text-align: center;
-        color: white;
-    }
-</style>
-</head>
-<body>
-
-<h2>Australian Bird Photographs</h2>
-
-<div class="gallery">
-    <!-- Placeholder images -->
-    <div class="item">
-        <img src="bird_photos/australian_birds/peacock.jpg" alt="Peacock" onclick="openModal('Peacock', 'Australia', '2023', 'bird_photos/australian_birds/peacock.jpg')" class="mediumPictures">
-        <div class="caption">Peacock<br>Australia<br>2023</div>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <a class="site-title" href="index.html">My Bird Photographs</a>
+        <p class="site-tag">Photographs &amp; field notes</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Garden_Birds.html">Garden Birds</a></li>
+          <li><a href="water_birds.html">Water Birds</a></li>
+          <li><a href="sea_birds.html">Sea Birds</a></li>
+          <li><a href="birds_of_prey.html">Birds of Prey</a></li>
+          <li><a href="australia_birds.html">Australian Birds</a></li>
+          <li><a href="garden.html">Bird Friendly Garden</a></li>
+          <li><a href="bird_table_2024.html">Garden Bird Info</a></li>
+          <li><a href="missing_birds.html">Common UK birds (missing)</a></li>
+          <li><a href="conservation.html">Conservation</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>  <main id="main-content" class="container">
+    <h2>Australian Bird Photographs</h2>
 
-    <div class="item">
-        <img src="bird_photos/australian_birds/galah.jpg" alt="galah" onclick="openModal('galah', 'Australia', '2023', 'bird_photos/australian_birds/galah.jpg')" class="mediumPictures">
-        <div class="caption">galah<br>Oz<br>2023</div>
+    <div class="gallery-grid">
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/peacock.jpg" alt="Peacock" loading="lazy">
+        <figcaption class="figure-caption">Peacock<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/galah.jpg" alt="Galah" loading="lazy">
+        <figcaption class="figure-caption">Galah<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/cockatoo.jpg" alt="Cockatoo" loading="lazy">
+        <figcaption class="figure-caption">Cockatoo<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/cockatoos.jpg" alt="Cockatoos" loading="lazy">
+        <figcaption class="figure-caption">Cockatoos<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/crimson.jpg" alt="Crimson Rosella" loading="lazy">
+        <figcaption class="figure-caption">Crimson Rosella<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/black parrot 2.jpg" alt="Black Parrot" loading="lazy">
+        <figcaption class="figure-caption">Black Parrot<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/green parrot.jpg" alt="Green Ringneck Parrot" loading="lazy">
+        <figcaption class="figure-caption">Green Ringneck Parrot<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/gp2.jpg" alt="Australian Ringneck Parrot" loading="lazy">
+        <figcaption class="figure-caption">Australian Ringneck<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/lorikeet.jpg" alt="Red-collared Lorikeet" loading="lazy">
+        <figcaption class="figure-caption">Red-collared Lorikeet<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/turkey.jpg" alt="Brush Turkey" loading="lazy">
+        <figcaption class="figure-caption">Brush Turkey<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/dove.jpg" alt="Bar Shouldered Dove" loading="lazy">
+        <figcaption class="figure-caption">Bar Shouldered Dove<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/pigeon.jpg" alt="Pied Imperial Pigeon" loading="lazy">
+        <figcaption class="figure-caption">Pied Imperial Pigeon<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/emerald dove.jpg" alt="Emerald Dove" loading="lazy">
+        <figcaption class="figure-caption">Emerald Dove<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/kookaboro.jpg" alt="Kookaboro" loading="lazy">
+        <figcaption class="figure-caption">Kookaboro<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/kooka2.jpg" alt="Kookaboro 2" loading="lazy">
+        <figcaption class="figure-caption">Kookaboro<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/bfh.jpg" alt="Blue Faced Honeyeater" loading="lazy">
+        <figcaption class="figure-caption">Blue Faced Honeyeater<br>Australia - Fogg Dam<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/crimson finch.jpg" alt="Crimson Finch" loading="lazy">
+        <figcaption class="figure-caption">Crimson Finch<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/butcher bird.jpg" alt="Butcher Bird" loading="lazy">
+        <figcaption class="figure-caption">Butcher Bird<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/birds.jpg" alt="Bird" loading="lazy">
+        <figcaption class="figure-caption">Bird<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/spinifex pigeon.jpg" alt="Spinifex Pigeon" loading="lazy">
+        <figcaption class="figure-caption">Spinifex Pigeon<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/jacada.jpg" alt="Jacada" loading="lazy">
+        <figcaption class="figure-caption">Jacada<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/kingfisher1.jpg" alt="Kingfisher" loading="lazy">
+        <figcaption class="figure-caption">Kingfisher<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/pelican.jpg" alt="Pelican" loading="lazy">
+        <figcaption class="figure-caption">Pelican<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/magpie goose.jpg" alt="Magpie Goose" loading="lazy">
+        <figcaption class="figure-caption">Magpie Goose<br>Australia - Fogg Dam<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/mpg.jpg" alt="Magpie Goose 2" loading="lazy">
+        <figcaption class="figure-caption">Magpie Goose<br>Australia - Fogg Dam<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/cormorant.jpg" alt="Great Cormorant" loading="lazy">
+        <figcaption class="figure-caption">Cormorant<br>Australia - Fogg Dam<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/egret.jpg" alt="Egret" loading="lazy">
+        <figcaption class="figure-caption">Egret<br>Australia - Fogg Dam<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/ibis.jpg" alt="Straw-necked Ibis" loading="lazy">
+        <figcaption class="figure-caption">Straw-necked Ibis<br>Australia - Fogg Dam<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/duck1.jpg" alt="Shelduck" loading="lazy">
+        <figcaption class="figure-caption">Shelduck<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/masked lapwing.jpg" alt="Masked Lapwing" loading="lazy">
+        <figcaption class="figure-caption">Masked Lapwing<br>Australia<br>2023</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="bird_photos/australian_birds/eagle.jpg" alt="White-Bellied Sea Eagle" loading="lazy">
+        <figcaption class="figure-caption">White-Bellied Sea Eagle<br>Australia<br>2023</figcaption>
+      </figure>
+
     </div>
-    <div class="item">
-        <img src="bird_photos/australian_birds/cockatoo.jpg" alt="Cockatoo" onclick="openModal('Cockatoo', 'Australia', '2023', 'bird_photos/australian_birds/cockatoo.jpg')" class="mediumPictures">
-        <div class="caption">Cockatoo<br>Australia<br>2023</div>
-    </div>
+  </main>
 
-    <div class="item">
-        <img src="bird_photos/australian_birds/cockatoos.jpg" alt="cockatoos" onclick="openModal('Cockatoos', 'Australia', '2023', 'bird_photos/australian_birds/cockatoos.jpg')" class="mediumPictures">
-        <div class="caption">Cockatoos<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/crimson.jpg" alt="Crimson Rosella" onclick="openModal('Crimson Rosella', 'Australia','2023', 'bird_photos/australian_birds/crimson.jpg')" class="mediumPictures">
-        <div class="caption">Bird 1<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/black parrot 2.jpg" alt="black parrot" onclick="openModal('black parrot', 'Australia', '2023', 'bird_photos/australian_birds/black parrot 2.jpg')" class="mediumPictures">
-        <div class="caption">black parrot<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/green parrot.jpg" alt="Green Ringneck Parrot" onclick="openModal('Green Parrot', 'Australia', '2023', 'bird_photos/australian_birds/green parrot.jpg')" class="mediumPictures">
-        <div class="caption">Bird 1<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/gp2.jpg" alt="Australian Ringneck Parrot" onclick="openModal('Australian Ringneck', 'Australia', '2023', 'bird_photos/australian_birds/gp2.jpg')" class="mediumPictures">
-        <div class="caption">Bird 1<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/lorikeet.jpg" alt="Red-collared Lorikeet" onclick="openModal('Red-collared Lorikeet', 'Australia', '2023', 'bird_photos/australian_birds/lorikeet.jpg')" class="mediumPictures">
-        <div class="caption">Red-collared Lorikeet<br>Australia<br>2023</div>
-    </div>
-    
-    <div class="item">
-        <img src="bird_photos/australian_birds/turkey.jpg" alt="Brush Turkey" onclick="openModal('Brush Turkey', 'Location 3', '2023', 'bird_photos/australian_birds/turkey.jpg')" class="mediumPictures">
-        <div class="caption">Bird 1<br>Australia<br>2023</div>
-    </div>
-    
-    <div class="item">
-        <img src="bird_photos/australian_birds/dove.jpg" alt="Bar Shouldered Dove" onclick="openModal('Bar Shouldered Dove', 'Australia', '2023', 'bird_photos/australian_birds/dove.jpg')" class="mediumPictures">
-        <div class="caption">Bird 1<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/pigeon.jpg" alt="Pied Imperial Pigeon" onclick="openModal('Pied Imperial Pigeon', 'Australia', '2023', 'bird_photos/australian_birds/pigeon.jpg')" class="mediumPictures">
-        <div class="caption">Pied Imperial Pigeon<br>Australia <br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/emerald dove.jpg" alt="Emerald Dove" onclick="openModal('Emjerald Dove', 'Australia', '2023', 'bird_photos/australian_birds/emerald dove.jpg')" class="mediumPictures">
-        <div class="caption">Bird 1<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/kookaboro.jpg" alt="Kookaboro" onclick="openModal('Kookaboro', 'Australia', '2023', 'bird_photos/australian_birds/kookaboro.jpg')" class="mediumPictures">
-        <div class="caption">Bird 1<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/kooka2.jpg" alt="Kookaboro" onclick="openModal('Kookaboro', 'Australia', '2023', 'bird_photos/australian_birds/kooka2.jpg')" class="mediumPictures">
-        <div class="caption">Kookaboro<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/bfh.jpg" alt="Blue Faced Honeyeater" onclick="openModal('Blue Faced Honeyeater', 'Australia', '2023', 'bird_photos/australian_birds/bfh.jpg')" class="mediumPictures">
-        <div class="caption">Pelican<br>Australia - Fogg Dam<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/crimson finch.jpg" alt="Crimson Finch" onclick="openModal('crimson finch', 'Australia', '2023', 'bird_photos/australian_birds/crimson finch.jpg')" class="mediumPictures">
-        <div class="caption">Bird 1<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/butcher bird.jpg" alt="Butcher Bird" onclick="openModal('Butcher Bird', 'Australia', '2023', 'bird_photos/australian_birds/butcher bird.jpg')" class="mediumPictures">
-        <div class="caption">Butcher Bird<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/birds.jpg" alt="Bird" onclick="openModal('Bird', 'Australia', '2023', 'bird_photos/australian_birds/birds.jpg')" class="mediumPictures">
-        <div class="caption">Bird<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/spinifex pigeon.jpg" alt="Spinifex Pigeon" onclick="openModal('Spinifex Pigeon', 'Australia', '2023', 'bird_photos/australian_birds/spinifex pigeon.jpg')" class="mediumPictures">
-        <div class="caption">Spinifex Pigeon<br>Australia<br>2023</div>
-    </div>
-    
-    <div class="item">
-        <img src="bird_photos/australian_birds/jacada.jpg" alt="Jacada" onclick="openModal('Jacada', 'Australia', '2023', 'bird_photos/australian_birds/jacada.jpg')" class="mediumPictures">
-        <div class="caption">Jacada<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/kingfisher1.jpg" alt="Kingfisher" onclick="openModal('Kingfisher', 'Australia', '2023', 'bird_photos/australian_birds/kingfisher1.jpg')" class="mediumPictures">
-        <div class="caption">Kingfisher<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/pelican.jpg" alt="Pelican" onclick="openModal('Pelican', 'Australia - Cairns', '2023', 'bird_photos/australian_birds/pelican.jpg')" class="mediumPictures">
-        <div class="caption">Pelican<br>Australia<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/magpie goose.jpg" alt="Pelican" onclick="openModal('Magpie Goose', 'Australia - Fogg Dam', '2023', 'bird_photos/australian_birds/Magpie Goose.jpg')" class="mediumPictures">
-        <div class="caption">Pelican<br>Australia - Fogg Dam<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/mpg.jpg" alt="Magpie Goose" onclick="openModal('Magpie Goose', 'Australia - Fogg Dam', '2023', 'bird_photos/australian_birds/Mpg.jpg')" class="mediumPictures">
-        <div class="caption">Magpie Goose<br>Australia - Fogg Dam<br>2023</div>
-    </div>
-
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/cormorant.jpg" alt="Great Cormorant" onclick="openModal('Great Cormorant', 'Australia', '2023', 'bird_photos/australian_birds/Cormorant.jpg')" class="mediumPictures">
-        <div class="caption">Cormorant<br>Australia - Fogg Dam<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/egret.jpg" alt="Egret" onclick="openModal('', 'Australia', '2023', 'bird_photos/australian_birds/egret.jpg')" class="mediumPictures">
-        <div class="caption">Egret<br>Australia - Fogg Dam<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/ibis.jpg" alt="Straw-necked Ibis" onclick="openModal('Straw-necked Ibis', 'Australia', '2023', 'bird_photos/australian_birds/ibis.jpg')" class="mediumPictures">
-        <div class="caption">Straw-necked Ibis<br>Australia - Fogg Dam<br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/duck1.jpg" alt="?" onclick="openModal('Shelduck', 'Australia', '2023', 'bird_photos/australian_birds/duck1.jpg')" class="mediumPictures">
-        <div class="caption">Shelduck<br>Australia <br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/masked lapwing.jpg" alt="Masked Lapwing" onclick="openModal('Masked Lapwing', 'Australia', '2023', 'bird_photos/australian_birds/masked lapwing.jpg')" class="mediumPictures">
-        <div class="caption">Masked Lapwing<br>Australia <br>2023</div>
-    </div>
-
-    <div class="item">
-        <img src="bird_photos/australian_birds/eagle.jpg" alt="White-Bellied Sea Eagle" onclick="openModal('White-Bellied Sea Eagle', 'Australia', '2023', 'bird_photos/australian_birds/eagle.jpg')" class="mediumPictures">
-        <div class="caption">White-Bellied Sea Eagle<br>Australia <br>2023</div>
-    </div>
-
-
-    <!-- Repeat for other images -->
-    <!-- You can add more items here -->
-</div>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="img01">
-  <div id="caption" class="caption"></div>
-</div>
-
-<script>
-    function openModal(name, location, date, photoSrc) {
-      document.getElementById('myModal').style.display = "block";
-      document.getElementById("img01").src = photoSrc; // Set the source of the clicked photo
-      document.getElementById("caption").innerHTML = name + "<br>" + location + "<br>" + date;
-    }
-
-    function closeModal() {
-      document.getElementById('myModal').style.display = "none";
-}
-
-
-    </script>
+<script src="scripts.js"></script>
 
 </body>
 </html>
