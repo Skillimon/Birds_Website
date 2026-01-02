@@ -133,3 +133,102 @@
   window.openModal = openModal;
   window.closeModal = closeModal;
 })();
+
+// Bird search functionality
+(function(){
+  const searchInput = document.getElementById('bird-search');
+  const searchBtn = document.getElementById('search-btn');
+  const searchResults = document.getElementById('search-results');
+
+  if(!searchInput || !searchBtn || !searchResults) return;
+
+  // Database of birds and their locations across the site
+  const birdDatabase = {
+    'Garden_Birds.html': ['Blackbird', 'Blackcap', 'Blue Tit', 'Bullfinch', 'Dunnock', 'Goldfinch', 'Great Tit', 'Green Woodpecker', 'Jackdaw', 'Jay', 'Long Tailed Tit', 'Magpie', 'Nuthatch', 'Redwing', 'Robin', 'Song Thrush', 'Wood Pigeon', 'Woodpecker', 'Wren'],
+    'countryside.html': ['Pheasant', 'Stonechat'],
+    'water_birds.html': ['Ash Headed Goose', 'Bar Headed Goose', 'Black Necked Swan', 'Canada Goose', 'Coot', 'Egret', 'Flamingo', 'Greylag Goose', 'Kingfisher', 'Knob Billed Duck', 'Lesser White Fronted Goose', 'Mallard', 'Moorhen', 'Redhead Duck', 'Sandpiper', 'Scaup', 'Shelduck', 'Spoonbill', 'Swans', 'Whooper Swan', 'Yellowhammer'],
+    'sea_birds.html': ['Black-headed Gull', 'Curlew', 'Egret', 'Gull', 'Pelican', 'Tern'],
+    'birds_of_prey.html': ['Bald Eagle', 'Barn Owl', 'Common Buzzard', 'Falcon', 'Fish Eagle', 'Golden Eagle', 'Great Grey Owl', 'Hen Harrier', 'Long Eared Owl', 'Owl', 'Red Kite', 'Tawny Owl', 'Vulture', 'White Falcon'],
+    'australia_birds.html': ['Australian Ringneck', 'Bar Shouldered Dove', 'Black Parrot', 'Blue Faced Honeyeater', 'Brahminy Kite', 'Brush Turkey', 'Bush Stone Curlew', 'Butcher Bird', 'Cockatoo', 'Cockatoos', 'Cormorant', 'Crimson Finch', 'Crimson Rosella', 'Ducula', 'Egret', 'Emerald Dove', 'Galah', 'Green Ringneck Parrot', 'Jacada', 'Kingfisher', 'Kookaburra', 'Magpie Goose', 'Masked Lapwing', 'Merops', 'Mute Swan', 'Peacock', 'Pelican', 'Pied Imperial Pigeon', 'Red-collared Lorikeet', 'Shelduck', 'Spinifex Pigeon', 'Straw-necked Ibis', 'White-Bellied Sea Eagle', 'Yellow-Throated Miner'],
+    'world.html': ['Limpkin', 'Ostrich', 'Penguin', 'Roulroul Partridge']
+  };
+
+  const pageNames = {
+    'Garden_Birds.html': 'Garden Birds',
+    'countryside.html': 'Countryside Birds',
+    'water_birds.html': 'Water Birds',
+    'sea_birds.html': 'Seabirds',
+    'birds_of_prey.html': 'Raptors',
+    'australia_birds.html': 'Australian Birds',
+    'world.html': 'World Birds'
+  };
+
+  function performSearch(){
+    const query = searchInput.value.trim().toLowerCase();
+    if(!query){
+      searchResults.classList.remove('active');
+      searchResults.innerHTML = '';
+      return;
+    }
+
+    const results = [];
+    
+    // Search through all pages
+    for(const [page, birds] of Object.entries(birdDatabase)){
+      birds.forEach(bird => {
+        if(bird.toLowerCase().includes(query)){
+          results.push({
+            bird: bird,
+            page: page,
+            pageName: pageNames[page]
+          });
+        }
+      });
+    }
+
+    displayResults(results, query);
+  }
+
+  function displayResults(results, query){
+    searchResults.classList.add('active');
+    
+    if(results.length === 0){
+      searchResults.innerHTML = '<div class="no-results">No birds found matching "' + escapeHtml(query) + '". Try searching for common names like "Blue Tit", "Robin", or "Owl".</div>';
+      return;
+    }
+
+    let html = '<div class="search-results-header">Found ' + results.length + ' result' + (results.length !== 1 ? 's' : '') + ' for "' + escapeHtml(query) + '":</div>';
+    
+    results.forEach(result => {
+      html += '<div class="search-result-item">';
+      html += '<a href="' + result.page + '">' + escapeHtml(result.bird) + '</a>';
+      html += '<div class="search-result-page">In: ' + escapeHtml(result.pageName) + '</div>';
+      html += '</div>';
+    });
+
+    searchResults.innerHTML = html;
+  }
+
+  function escapeHtml(text){
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  searchBtn.addEventListener('click', performSearch);
+  
+  searchInput.addEventListener('keypress', function(e){
+    if(e.key === 'Enter'){
+      e.preventDefault();
+      performSearch();
+    }
+  });
+
+  // Clear results when input is cleared
+  searchInput.addEventListener('input', function(){
+    if(!searchInput.value.trim()){
+      searchResults.classList.remove('active');
+      searchResults.innerHTML = '';
+    }
+  });
+})();
