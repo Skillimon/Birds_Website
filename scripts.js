@@ -1,7 +1,35 @@
-// scripts.js — small helpers (lightbox)
+// scripts.js — small helpers (lightbox + mobile menu)
 (function(){
   let lastActive = null;
   let keyHandler = null;
+
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const nav = document.querySelector('nav ul');
+  
+  if(menuToggle && nav){
+    menuToggle.addEventListener('click', function(){
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      nav.classList.toggle('show');
+    });
+
+    // Close menu when clicking a link
+    nav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        nav.classList.remove('show');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e){
+      if(!menuToggle.contains(e.target) && !nav.contains(e.target)){
+        nav.classList.remove('show');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
   document.addEventListener('click', function(e){
     const t = e.target;
