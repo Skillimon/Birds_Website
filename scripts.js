@@ -146,11 +146,11 @@
   const birdDatabase = {
     'Garden_Birds.html': ['Blackbird', 'Blackcap', 'Blue Tit', 'Bullfinch', 'Dunnock', 'Goldfinch', 'Great Tit', 'Green Woodpecker', 'Jackdaw', 'Jay', 'Long Tailed Tit', 'Magpie', 'Nuthatch', 'Redwing', 'Robin', 'Song Thrush', 'Wood Pigeon', 'Woodpecker', 'Wren'],
     'countryside.html': ['Pheasant', 'Stonechat'],
-    'water_birds.html': ['Ash Headed Goose', 'Bar Headed Goose', 'Black Necked Swan', 'Canada Goose', 'Coot', 'Egret', 'Flamingo', 'Greylag Goose', 'Kingfisher', 'Knob Billed Duck', 'Lesser White Fronted Goose', 'Mallard', 'Moorhen', 'Redhead Duck', 'Sandpiper', 'Scaup', 'Shelduck', 'Spoonbill', 'Swans', 'Whooper Swan', 'Yellowhammer'],
+    'water_birds.html': ['Ash Headed Goose', 'Bar Headed Goose', 'Black Necked Swan', 'Canada Goose', 'Common Crane', 'Coot', 'Egret', 'Flamingo', 'Greylag Goose', 'Kingfisher', 'Knob Billed Duck', 'Lesser White Fronted Goose', 'Mallard', 'Moorhen', 'Oxyura', 'Pied Avocet', 'Redhead Duck', 'Sandpiper', 'Scaup', 'Shelduck', 'Spoonbill', 'Swans', 'Whooper Swan', 'Yellowhammer'],
     'sea_birds.html': ['Black-headed Gull', 'Curlew', 'Egret', 'Gull', 'Pelican', 'Tern'],
     'birds_of_prey.html': ['Bald Eagle', 'Barn Owl', 'Common Buzzard', 'Falcon', 'Fish Eagle', 'Golden Eagle', 'Great Grey Owl', 'Hen Harrier', 'Long Eared Owl', 'Owl', 'Red Kite', 'Tawny Owl', 'Vulture', 'White Falcon'],
-    'australia_birds.html': ['Australian Ringneck', 'Bar Shouldered Dove', 'Black Parrot', 'Blue Faced Honeyeater', 'Brahminy Kite', 'Brush Turkey', 'Bush Stone Curlew', 'Butcher Bird', 'Cockatoo', 'Cockatoos', 'Cormorant', 'Crimson Finch', 'Crimson Rosella', 'Ducula', 'Egret', 'Emerald Dove', 'Galah', 'Green Ringneck Parrot', 'Jacada', 'Kingfisher', 'Kookaburra', 'Magpie Goose', 'Masked Lapwing', 'Merops', 'Mute Swan', 'Peacock', 'Pelican', 'Pied Imperial Pigeon', 'Red-collared Lorikeet', 'Shelduck', 'Spinifex Pigeon', 'Straw-necked Ibis', 'White-Bellied Sea Eagle', 'Yellow-Throated Miner'],
-    'world.html': ['Limpkin', 'Ostrich', 'Penguin', 'Roulroul Partridge']
+    'australia_birds.html': ['Australian Ringneck', 'Bar Shouldered Dove', 'Black Parrot', 'Blue Faced Honeyeater', 'Brahminy Kite', 'Brush Turkey', 'Bush Stone Curlew', 'Butcher Bird', 'Cockatoo', 'Cockatoos', 'Cormorant', 'Crimson Finch', 'Crimson Rosella', 'Ducula', 'Egret', 'Emerald Dove', 'Emu', 'Galah', 'Green Ringneck Parrot', 'Jacada', 'Kingfisher', 'Kookaburra', 'Little Pied Cormorant', 'Magpie Goose', 'Masked Lapwing', 'Merops', 'Mute Swan', 'Peacock', 'Pelican', 'Pied Currawong', 'Pied Imperial Pigeon', 'Red-collared Lorikeet', 'Shelduck', 'Spinifex Pigeon', 'Straw-necked Ibis', 'Welcome Swallow', 'White-Bellied Sea Eagle', 'Yellow-Throated Miner'],
+    'world.html': ['Limpkin', 'Ostrich', 'Otter', 'Penguin', 'Red Whiskered Bulbul', 'Roulroul Partridge', 'Seals']
   };
 
   const pageNames = {
