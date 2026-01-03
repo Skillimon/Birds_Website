@@ -90,6 +90,11 @@ main{padding-bottom:40px}
 .status-badge.vu{background:#ffe5cc;color:#cc5500}
 .status-badge.en{background:#f8d7da;color:#721c24}
 .status-badge.cr{background:#f5c6cb;color:#491217}
+.migration-dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin:0 4px}
+.migration-dot.resident{background:#28a745}
+.migration-dot.passage{background:#dc3545}
+.migration-dot.summer{background:#ffc107}
+.migration-dot.winter{background:#17a2b8}
 
 /* Hero image */
 .hero{display:flex;align-items:center;gap:18px;background:linear-gradient(180deg,rgba(255,255,255,0.7),transparent);padding:18px;border-radius:12px;margin-bottom:20px}

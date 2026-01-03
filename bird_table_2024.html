@@ -35,7 +35,7 @@
         <li><a href="australia_birds.html">Australia</a></li>
         <li><a href="world.html">World</a></li>
         <li><a href="garden.html">Wildlife Garden</a></li>
-        <li><a href="missing_birds.html">Missing</a></li>        <li><a href="conservation.html">Conservation</a></li>
+        <li><a href="conservation.html">Conservation</a></li>
       </ul>
     </nav>
   </div>
@@ -50,7 +50,15 @@
       <span class="status-badge vu">VU</span> Vulnerable
       <span class="status-badge en">EN</span> Endangered
       <span class="status-badge cr">CR</span> Critically Endangered
-    </div>  </section>
+    </div>
+    <div style="margin:12px 0;padding:12px;background:var(--card);border-radius:8px;border-left:3px solid var(--accent)">
+      <strong>Migration Status Key:</strong>
+      <span class="migration-dot resident"></span> Resident
+      <span class="migration-dot summer"></span> Summer visitor
+      <span class="migration-dot winter"></span> Winter visitor
+      <span class="migration-dot passage"></span> Passage migrant
+    </div>
+  </section>
 
   <div class="tab-navigation" style="margin: 20px 0; text-align: center;">
     <button class="tab-btn active" data-tab="garden-tab" style="padding: 10px 20px; margin: 5px; cursor: pointer; border: 2px solid var(--accent); background: var(--accent); color: white; border-radius: 5px; font-weight: bold;">Garden</button>
@@ -69,6 +77,7 @@
         <th>Type</th>
         <th>Latin Name</th>
         <th>Status</th>
+        <th>Migration</th>
         <th>Lifespan</th>
         <th>Where Nest</th>
         <th>Nesting Period</th>
@@ -79,6 +88,7 @@
         <td>Blackbird</td>
         <td><em>Turdus merula</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>2-4 years</td>
         <td>Hedgerows, trees</td>
         <td>April - July</td>
@@ -89,6 +99,7 @@
         <td>Blackcap</td>
         <td><em>Sylvia atricapilla</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot summer"></span></td>
         <td>2-3 years</td>
         <td>Hedgerows, shrubs</td>
         <td>April - July</td>
@@ -99,6 +110,7 @@
         <td>Blue Tit</td>
         <td><em>Cyanistes caeruleus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>2-3 years</td>
         <td>Hole in trees or nest boxes</td>
         <td>April - June</td>
@@ -109,6 +121,7 @@
         <td>Bullfinch</td>
         <td><em>Pyrrhula pyrrhula</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>2-4 years</td>
         <td>Bushes and hedgerows</td>
         <td>April - July</td>
@@ -116,9 +129,32 @@
         <td>Seeds, buds, some insects</td>
       </tr>
       <tr>
+        <td>Chaffinch</td>
+        <td><em>Fringilla coelebs</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>2-3 years</td>
+        <td>Trees, hedgerows</td>
+        <td>April - July</td>
+        <td>4-5 eggs</td>
+        <td>Seeds, insects</td>
+      </tr>
+      <tr>
+        <td>Collared Dove</td>
+        <td><em>Streptopelia decaocto</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>2-3 years</td>
+        <td>Trees, buildings</td>
+        <td>Year-round</td>
+        <td>2 eggs</td>
+        <td>Seeds, grains</td>
+      </tr>
+      <tr>
         <td>Dunnock</td>
         <td><em>Prunella modularis</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>2-3 years</td>
         <td>Low bushes, hedges</td>
         <td>March - July</td>
@@ -129,6 +165,7 @@
         <td>Goldfinch</td>
         <td><em>Carduelis carduelis</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>2-3 years</td>
         <td>Tall weeds, bushes</td>
         <td>May - July</td>
@@ -136,9 +173,21 @@
         <td>Seeds, small insects</td>
       </tr>
       <tr>
+        <td>Goldcrest</td>
+        <td><em>Regulus regulus</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>2-3 years</td>
+        <td>Conifer trees</td>
+        <td>April - July</td>
+        <td>7-12 eggs</td>
+        <td>Insects, spiders</td>
+      </tr>
+      <tr>
         <td>Great Spotted Woodpecker</td>
         <td><em>Dendrocopos major</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>3-4 years</td>
         <td>Tree holes</td>
         <td>April - May</td>
@@ -149,6 +198,7 @@
         <td>Great Tit</td>
         <td><em>Parus major</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>2-3 years</td>
         <td>Hole in trees or nest boxes</td>
         <td>April - June</td>
@@ -156,9 +206,21 @@
         <td>Insects, seeds, nuts</td>
       </tr>
       <tr>
+        <td>House Sparrow</td>
+        <td><em>Passer domesticus</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>2-3 years</td>
+        <td>Buildings, nest boxes</td>
+        <td>April - August</td>
+        <td>3-5 eggs</td>
+        <td>Seeds, insects</td>
+      </tr>
+      <tr>
         <td>Green Woodpecker</td>
         <td><em>Picus viridis</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>3-7 years</td>
         <td>Tree holes and old wood</td>
         <td>April - June</td>
@@ -169,6 +231,7 @@
         <td>Jackdaw</td>
         <td><em>Corvus monedula</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>3-4 years</td>
         <td>Buildings, trees, cliffs</td>
         <td>April - July</td>
@@ -179,6 +242,7 @@
         <td>Jay</td>
         <td><em>Garrulus glandarius</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>5-7 years</td>
         <td>Woodlands, parks, gardens</td>
         <td>March - July</td>
@@ -189,6 +253,7 @@
         <td>Long-tailed Tit</td>
         <td><em>Aegithalos caudatus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>2-3 years</td>
         <td>Shrubbery, hedgerows</td>
         <td>April - June</td>
@@ -196,9 +261,21 @@
         <td>Insects, spiders, seeds</td>
       </tr>
       <tr>
+        <td>Mistle Thrush</td>
+        <td><em>Turdus viscivorus</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>2-3 years</td>
+        <td>Trees, bushes</td>
+        <td>February - July</td>
+        <td>3-5 eggs</td>
+        <td>Berries, insects, worms</td>
+      </tr>
+      <tr>
         <td>Magpie</td>
         <td><em>Pica pica</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>3-5 years</td>
         <td>Trees, shrubs, and buildings</td>
         <td>March - July</td>
@@ -209,6 +286,7 @@
         <td>Nuthatch</td>
         <td><em>Sitta europaea</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>2-4 years</td>
         <td>Tree cavities, walls</td>
         <td>April - June</td>
@@ -219,6 +297,7 @@
         <td>Redwing</td>
         <td><em>Turdus iliacus</em></td>
         <td><span class="status-badge nt">NT</span></td>
+        <td><span class="migration-dot winter"></span></td>
         <td>2-4 years</td>
         <td>Hedgerows, trees</td>
         <td>April - July</td>
@@ -229,6 +308,7 @@
         <td>Robin</td>
         <td><em>Erithacus rubecula</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>1-3 years</td>
         <td>Hedgerows, shrubs, and trees</td>
         <td>March - August</td>
@@ -239,6 +319,7 @@
         <td>Song Thrush</td>
         <td><em>Turdus philomelos</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>2-3 years</td>
         <td>Hedgerows, trees, shrubs</td>
         <td>March - July</td>
@@ -246,9 +327,21 @@
         <td>Snails, worms, insects, berries</td>
       </tr>
       <tr>
+        <td>Starling</td>
+        <td><em>Sturnus vulgaris</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>2-3 years</td>
+        <td>Holes in trees, buildings</td>
+        <td>April - July</td>
+        <td>4-7 eggs</td>
+        <td>Insects, seeds, fruits</td>
+      </tr>
+      <tr>
         <td>Wren</td>
         <td><em>Troglodytes troglodytes</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>1-3 years</td>
         <td>Crevices, dense shrubs</td>
         <td>April - August</td>
@@ -259,6 +352,7 @@
         <td>Wood Pigeon</td>
         <td><em>Columba palumbus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>3-5 years</td>
         <td>Trees, buildings, cliffs</td>
         <td>Year-round</td>
@@ -278,6 +372,7 @@
         <th>Type</th>
         <th>Latin Name</th>
         <th>Status</th>
+        <th>Migration</th>
         <th>Lifespan</th>
         <th>Where Nest</th>
         <th>Nesting Period</th>
@@ -285,9 +380,65 @@
         <th>Type of Food</th>
       </tr>
       <tr>
+        <td>Great Spotted Woodpecker</td>
+        <td><em>Dendrocopos major</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>3-4 years</td>
+        <td>Tree holes</td>
+        <td>April - May</td>
+        <td>3-6 eggs</td>
+        <td>Insects, seeds</td>
+      </tr>
+      <tr>
+        <td>Green Woodpecker</td>
+        <td><em>Picus viridis</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>3-7 years</td>
+        <td>Tree holes and old wood</td>
+        <td>April - June</td>
+        <td>3-6 eggs</td>
+        <td>Ants, insects</td>
+      </tr>
+      <tr>
+        <td>Jackdaw</td>
+        <td><em>Corvus monedula</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>3-4 years</td>
+        <td>Buildings, trees, cliffs</td>
+        <td>April - July</td>
+        <td>3-6 eggs</td>
+        <td>Omnivorous: insects, seeds, small animals</td>
+      </tr>
+      <tr>
+        <td>Jay</td>
+        <td><em>Garrulus glandarius</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>5-7 years</td>
+        <td>Woodlands, parks, gardens</td>
+        <td>March - July</td>
+        <td>4-6 eggs</td>
+        <td>Insects, nuts, seeds, fruits, acorns</td>
+      </tr>
+      <tr>
+        <td>Magpie</td>
+        <td><em>Pica pica</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>3-5 years</td>
+        <td>Trees, shrubs, and buildings</td>
+        <td>March - July</td>
+        <td>5-8 eggs</td>
+        <td>Insects, carrion, fruits, seeds</td>
+      </tr>
+      <tr>
         <td>Pheasant</td>
         <td><em>Phasianus colchicus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>2-4 years</td>
         <td>Ground nests in grass</td>
         <td>April - June</td>
@@ -295,9 +446,21 @@
         <td>Seeds, grains, insects</td>
       </tr>
       <tr>
+        <td>Rook</td>
+        <td><em>Corvus frugilegus</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>4-6 years</td>
+        <td>Trees in colonies (rookeries)</td>
+        <td>March - May</td>
+        <td>3-5 eggs</td>
+        <td>Worms, insects, seeds, grains</td>
+      </tr>
+      <tr>
         <td>Stonechat</td>
         <td><em>Saxicola rubicola</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>2-3 years</td>
         <td>Low bushes, gorse</td>
         <td>April - July</td>
@@ -317,6 +480,7 @@
         <th>Type</th>
         <th>Latin Name</th>
         <th>Status</th>
+        <th>Migration</th>
         <th>Lifespan</th>
         <th>Where Nest</th>
         <th>Nesting Period</th>
@@ -327,6 +491,7 @@
         <td>Ash Headed Goose</td>
         <td><em>Chloephaga poliocephala</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>10-15 years</td>
         <td>Ground near water</td>
         <td>September - November</td>
@@ -337,6 +502,7 @@
         <td>Bar Headed Goose</td>
         <td><em>Anser indicus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>15-20 years</td>
         <td>Ground near lakes</td>
         <td>May - June</td>
@@ -344,9 +510,21 @@
         <td>Grasses, grains</td>
       </tr>
       <tr>
+        <td>Barrows Goldeneye</td>
+        <td><em>Bucephala islandica</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot winter"></span></td>
+        <td>10-15 years</td>
+        <td>Tree cavities near water</td>
+        <td>May - June</td>
+        <td>8-12 eggs</td>
+        <td>Aquatic insects, crustaceans</td>
+      </tr>
+      <tr>
         <td>Black Necked Swan</td>
         <td><em>Cygnus melancoryphus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>10-15 years</td>
         <td>Near water in vegetation</td>
         <td>July - October</td>
@@ -354,9 +532,21 @@
         <td>Aquatic vegetation</td>
       </tr>
       <tr>
+        <td>Bufflehead</td>
+        <td><em>Bucephala albeola</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot winter"></span></td>
+        <td>10-12 years</td>
+        <td>Tree cavities</td>
+        <td>May - June</td>
+        <td>6-12 eggs</td>
+        <td>Aquatic insects, crustaceans</td>
+      </tr>
+      <tr>
         <td>Canada Goose</td>
         <td><em>Branta canadensis</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>10-24 years</td>
         <td>Ground near water</td>
         <td>April - May</td>
@@ -364,9 +554,21 @@
         <td>Grasses, grains</td>
       </tr>
       <tr>
+        <td>Chiloe Wigeon</td>
+        <td><em>Anas sibilatrix</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>10-15 years</td>
+        <td>Ground near water</td>
+        <td>September - December</td>
+        <td>5-8 eggs</td>
+        <td>Aquatic plants, grasses</td>
+      </tr>
+      <tr>
         <td>Common Crane</td>
         <td><em>Grus grus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot passage"></span></td>
         <td>20-30 years</td>
         <td>Wetland marshes</td>
         <td>April - June</td>
@@ -374,9 +576,21 @@
         <td>Plants, insects, small animals</td>
       </tr>
       <tr>
+        <td>Common Goldeneye</td>
+        <td><em>Bucephala clangula</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot winter"></span></td>
+        <td>10-15 years</td>
+        <td>Tree cavities</td>
+        <td>May - June</td>
+        <td>8-11 eggs</td>
+        <td>Aquatic insects, molluscs</td>
+      </tr>
+      <tr>
         <td>Common Kingfisher</td>
         <td><em>Alcedo atthis</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>2-3 years</td>
         <td>Riverbank burrows</td>
         <td>April - July</td>
@@ -387,6 +601,7 @@
         <td>Common Sandpiper</td>
         <td><em>Actitis hypoleucos</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot summer"></span></td>
         <td>5-8 years</td>
         <td>Ground near water</td>
         <td>May - June</td>
@@ -397,6 +612,7 @@
         <td>Common Shelduck</td>
         <td><em>Tadorna tadorna</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>10-15 years</td>
         <td>Burrows, holes</td>
         <td>April - June</td>
@@ -407,6 +623,7 @@
         <td>Coot</td>
         <td><em>Fulica atra</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>3-5 years</td>
         <td>Waterside vegetation</td>
         <td>April - June</td>
@@ -417,6 +634,7 @@
         <td>Eurasian Spoonbill</td>
         <td><em>Platalea leucorodia</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot summer"></span></td>
         <td>20-25 years</td>
         <td>Reedbeds, trees</td>
         <td>April - June</td>
@@ -427,6 +645,7 @@
         <td>Greater Flamingo</td>
         <td><em>Phoenicopterus roseus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>20-30 years</td>
         <td>Mud mounds in water</td>
         <td>March - June</td>
@@ -437,6 +656,7 @@
         <td>Greater Scaup</td>
         <td><em>Aythya marila</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot winter"></span></td>
         <td>10-15 years</td>
         <td>Ground near water</td>
         <td>May - July</td>
@@ -447,6 +667,7 @@
         <td>Greylag Goose</td>
         <td><em>Anser anser</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>15-20 years</td>
         <td>Ground in reeds</td>
         <td>April - May</td>
@@ -457,6 +678,7 @@
         <td>Knob Billed Duck</td>
         <td><em>Sarkidiornis melanotos</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>8-12 years</td>
         <td>Tree holes, ground</td>
         <td>June - September</td>
@@ -467,6 +689,7 @@
         <td>Lesser White Fronted Goose</td>
         <td><em>Anser erythropus</em></td>
         <td><span class="status-badge vu">VU</span></td>
+        <td><span class="migration-dot winter"></span></td>
         <td>10-15 years</td>
         <td>Ground in tundra</td>
         <td>May - June</td>
@@ -477,6 +700,7 @@
         <td>Little Egret</td>
         <td><em>Egretta garzetta</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>5-10 years</td>
         <td>Trees, reedbeds</td>
         <td>April - June</td>
@@ -484,9 +708,21 @@
         <td>Fish, amphibians, insects</td>
       </tr>
       <tr>
+        <td>Little Grebe</td>
+        <td><em>Tachybaptus ruficollis</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>2-4 years</td>
+        <td>Ponds, lakes (floating nest)</td>
+        <td>April - July</td>
+        <td>4-6 eggs</td>
+        <td>Small fish, aquatic insects</td>
+      </tr>
+      <tr>
         <td>Mallard</td>
         <td><em>Anas platyrhynchos</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>5-10 years</td>
         <td>Ground near water</td>
         <td>March - June</td>
@@ -497,6 +733,7 @@
         <td>Moorhen</td>
         <td><em>Gallinula chloropus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>2-3 years</td>
         <td>Waterside vegetation</td>
         <td>March - July</td>
@@ -504,9 +741,21 @@
         <td>Plants, insects, small fish</td>
       </tr>
       <tr>
+        <td>Netta</td>
+        <td><em>Netta rufina</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>8-12 years</td>
+        <td>Aquatic vegetation</td>
+        <td>April - June</td>
+        <td>8-10 eggs</td>
+        <td>Aquatic plants, invertebrates</td>
+      </tr>
+      <tr>
         <td>Mute Swan</td>
         <td><em>Cygnus olor</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>10-20 years</td>
         <td>Large nest near water</td>
         <td>April - May</td>
@@ -517,6 +766,7 @@
         <td>Pied Avocet</td>
         <td><em>Recurvirostra avosetta</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot summer"></span></td>
         <td>10-15 years</td>
         <td>Ground near shallow water</td>
         <td>April - June</td>
@@ -527,6 +777,7 @@
         <td>Redhead Duck</td>
         <td><em>Aythya americana</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>10-15 years</td>
         <td>Marsh vegetation</td>
         <td>May - July</td>
@@ -537,6 +788,7 @@
         <td>Ruddy Duck</td>
         <td><em>Oxyura jamaicensis</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>5-10 years</td>
         <td>Marsh vegetation</td>
         <td>May - July</td>
@@ -544,9 +796,43 @@
         <td>Aquatic invertebrates, seeds</td>
       </tr>
       <tr>
+        <td>Ruddy Shelduck</td>
+        <td><em>Tadorna ferruginea</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>10-15 years</td>
+        <td>Cliffs, burrows, tree holes</td>
+        <td>April - June</td>
+        <td>8-12 eggs</td>
+        <td>Aquatic plants, invertebrates</td>
+      </tr>
+      <tr>
+        <td>Teal</td>
+        <td><em>Anas crecca</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>5-10 years</td>
+        <td>Ground near water</td>
+        <td>April - June</td>
+        <td>8-11 eggs</td>
+        <td>Seeds, aquatic invertebrates</td>
+      </tr>
+      <tr>
+        <td>Tufted Duck</td>
+        <td><em>Aythya fuligula</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot winter"></span></td>
+        <td>10-15 years</td>
+        <td>Ground near water</td>
+        <td>May - July</td>
+        <td>6-12 eggs</td>
+        <td>Molluscs, insects, aquatic plants</td>
+      </tr>
+      <tr>
         <td>Whooper Swan</td>
         <td><em>Cygnus cygnus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot winter"></span></td>
         <td>20-30 years</td>
         <td>Ground near water</td>
         <td>May - June</td>
@@ -557,6 +843,7 @@
         <td>Yellowhammer</td>
         <td><em>Emberiza citrinella</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>2-3 years</td>
         <td>Low bushes, hedges</td>
         <td>April - August</td>
@@ -576,6 +863,7 @@
         <th>Type</th>
         <th>Latin Name</th>
         <th>Status</th>
+        <th>Migration</th>
         <th>Lifespan</th>
         <th>Where Nest</th>
         <th>Nesting Period</th>
@@ -586,6 +874,7 @@
         <td>Black-headed Gull</td>
         <td><em>Chroicocephalus ridibundus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>10-15 years</td>
         <td>Ground colonies</td>
         <td>April - June</td>
@@ -596,6 +885,7 @@
         <td>Brown Pelican</td>
         <td><em>Pelecanus occidentalis</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>15-25 years</td>
         <td>Coastal cliffs, islands</td>
         <td>March - May</td>
@@ -606,6 +896,7 @@
         <td>Common Tern</td>
         <td><em>Sterna hirundo</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot summer"></span></td>
         <td>10-15 years</td>
         <td>Beaches, islands</td>
         <td>May - July</td>
@@ -616,6 +907,7 @@
         <td>Curlew</td>
         <td><em>Numenius arquata</em></td>
         <td><span class="status-badge nt">NT</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>10-20 years</td>
         <td>Moorland, grassland</td>
         <td>April - May</td>
@@ -623,9 +915,43 @@
         <td>Worms, insects, crustaceans</td>
       </tr>
       <tr>
+        <td>Eurasian Oystercatcher</td>
+        <td><em>Haematopus ostralegus</em></td>
+        <td><span class="status-badge nt">NT</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>10-15 years</td>
+        <td>Beaches, coastal areas</td>
+        <td>April - June</td>
+        <td>2-4 eggs</td>
+        <td>Molluscs, worms, crustaceans</td>
+      </tr>
+      <tr>
+        <td>Gannet</td>
+        <td><em>Morus bassanus</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>15-20 years</td>
+        <td>Coastal cliffs, islands</td>
+        <td>April - May</td>
+        <td>1 egg</td>
+        <td>Fish</td>
+      </tr>
+      <tr>
+        <td>Guillemot</td>
+        <td><em>Uria aalge</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>10-20 years</td>
+        <td>Sea cliffs</td>
+        <td>May - July</td>
+        <td>1 egg</td>
+        <td>Fish, marine invertebrates</td>
+      </tr>
+      <tr>
         <td>Herring Gull</td>
         <td><em>Larus argentatus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>10-15 years</td>
         <td>Cliffs, rooftops</td>
         <td>April - June</td>
@@ -633,9 +959,21 @@
         <td>Fish, carrion, scraps</td>
       </tr>
       <tr>
+        <td>Kittiwake</td>
+        <td><em>Rissa tridactyla</em></td>
+        <td><span class="status-badge vu">VU</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>10-15 years</td>
+        <td>Sea cliffs</td>
+        <td>May - July</td>
+        <td>1-3 eggs</td>
+        <td>Fish, marine invertebrates</td>
+      </tr>
+      <tr>
         <td>Little Egret</td>
         <td><em>Egretta garzetta</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>5-10 years</td>
         <td>Trees, reedbeds</td>
         <td>April - June</td>
@@ -655,6 +993,7 @@
         <th>Type</th>
         <th>Latin Name</th>
         <th>Status</th>
+        <th>Migration</th>
         <th>Lifespan</th>
         <th>Where Nest</th>
         <th>Nesting Period</th>
@@ -665,6 +1004,7 @@
         <td>African Fish Eagle</td>
         <td><em>Haliaeetus vocifer</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>15-20 years</td>
         <td>Trees near water</td>
         <td>May - July</td>
@@ -675,6 +1015,7 @@
         <td>Bald Eagle</td>
         <td><em>Haliaeetus leucocephalus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>20-30 years</td>
         <td>Tall trees near water</td>
         <td>January - March</td>
@@ -685,6 +1026,7 @@
         <td>Barn Owl</td>
         <td><em>Tyto alba</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>4-10 years</td>
         <td>Tree cavities, buildings</td>
         <td>March - June</td>
@@ -695,6 +1037,7 @@
         <td>Common Buzzard</td>
         <td><em>Buteo buteo</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>12-25 years</td>
         <td>Trees, cliffs</td>
         <td>March - May</td>
@@ -705,6 +1048,7 @@
         <td>Golden Eagle</td>
         <td><em>Aquila chrysaetos</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>20-30 years</td>
         <td>Mountain cliffs</td>
         <td>March - May</td>
@@ -715,6 +1059,7 @@
         <td>Great Grey Owl</td>
         <td><em>Strix nebulosa</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>10-15 years</td>
         <td>Old nests, tree cavities</td>
         <td>March - May</td>
@@ -725,6 +1070,7 @@
         <td>Griffon Vulture</td>
         <td><em>Gyps fulvus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>20-30 years</td>
         <td>Cliffs, rocky ledges</td>
         <td>January - April</td>
@@ -735,6 +1081,7 @@
         <td>Gyrfalcon</td>
         <td><em>Falco rusticolus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>15-20 years</td>
         <td>Cliffs, rocky outcrops</td>
         <td>April - May</td>
@@ -745,6 +1092,7 @@
         <td>Hen Harrier</td>
         <td><em>Circus cyaneus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot summer"></span></td>
         <td>10-15 years</td>
         <td>Ground in moorland</td>
         <td>April - June</td>
@@ -752,9 +1100,21 @@
         <td>Small mammals, birds</td>
       </tr>
       <tr>
+        <td>Kestrel</td>
+        <td><em>Falco tinnunculus</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
+        <td>10-15 years</td>
+        <td>Tree holes, cliffs, buildings</td>
+        <td>April - June</td>
+        <td>3-6 eggs</td>
+        <td>Small mammals, birds, insects</td>
+      </tr>
+      <tr>
         <td>Long Eared Owl</td>
         <td><em>Asio otus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>10-15 years</td>
         <td>Old nests in trees</td>
         <td>March - May</td>
@@ -765,6 +1125,7 @@
         <td>Peregrine Falcon</td>
         <td><em>Falco peregrinus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>15-20 years</td>
         <td>Cliffs, tall buildings</td>
         <td>March - May</td>
@@ -775,6 +1136,7 @@
         <td>Red Kite</td>
         <td><em>Milvus milvus</em></td>
         <td><span class="status-badge nt">NT</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>20-25 years</td>
         <td>Trees in woodland</td>
         <td>April - May</td>
@@ -785,6 +1147,7 @@
         <td>Sparrowhawk</td>
         <td><em>Accipiter nisus</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>4-7 years</td>
         <td>Trees</td>
         <td>April - June</td>
@@ -795,6 +1158,7 @@
         <td>Tawny Owl</td>
         <td><em>Strix aluco</em></td>
         <td><span class="status-badge lc">LC</span></td>
+        <td><span class="migration-dot resident"></span></td>
         <td>4-8 years</td>
         <td>Tree holes, old nests</td>
         <td>March - May</td>
