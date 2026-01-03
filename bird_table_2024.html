@@ -42,15 +42,32 @@
 
 <main id="main-content" class="container">
   <section class="intro">
-    <p>Compact reference guide to common garden birds on My Bird Photographs â€” lifespan, nesting and diet.</p>
-  </section>
+    <p>Compact reference guide to bird information on My Bird Photographs – lifespan, nesting and diet.</p>    <div style="margin:12px 0;padding:12px;background:var(--card);border-radius:8px;border-left:3px solid var(--accent)">
+      <strong>IUCN Conservation Status Key:</strong>
+      <span class="status-badge lc">LC</span> Least Concern
+      <span class="status-badge nt">NT</span> Near Threatened
+      <span class="status-badge vu">VU</span> Vulnerable
+      <span class="status-badge en">EN</span> Endangered
+      <span class="status-badge cr">CR</span> Critically Endangered
+    </div>  </section>
 
+  <div class="tab-navigation" style="margin: 20px 0; text-align: center;">
+    <button class="tab-btn active" data-tab="garden-tab" style="padding: 10px 20px; margin: 5px; cursor: pointer; border: 2px solid var(--accent); background: var(--accent); color: white; border-radius: 5px; font-weight: bold;">Garden</button>
+    <button class="tab-btn" data-tab="countryside-tab" style="padding: 10px 20px; margin: 5px; cursor: pointer; border: 2px solid var(--accent); background: var(--card); color: var(--text); border-radius: 5px;">Countryside</button>
+    <button class="tab-btn" data-tab="water-tab" style="padding: 10px 20px; margin: 5px; cursor: pointer; border: 2px solid var(--accent); background: var(--card); color: var(--text); border-radius: 5px;">Water</button>
+    <button class="tab-btn" data-tab="seabirds-tab" style="padding: 10px 20px; margin: 5px; cursor: pointer; border: 2px solid var(--accent); background: var(--card); color: var(--text); border-radius: 5px;">Seabirds</button>
+    <button class="tab-btn" data-tab="raptors-tab" style="padding: 10px 20px; margin: 5px; cursor: pointer; border: 2px solid var(--accent); background: var(--card); color: var(--text); border-radius: 5px;">Raptors</button>
+  </div>
+
+  <div id="garden-tab" class="tab-content active">
   <section class="table-responsive" aria-labelledby="table-title">
     <h2 id="table-title" class="sr-only">Garden birds table</h2>
     <table>
       <caption class="kv">Garden birds â€” lifespan, nesting and diet</caption>
       <tr>
         <th>Type</th>
+        <th>Latin Name</th>
+        <th>Status</th>
         <th>Lifespan</th>
         <th>Where Nest</th>
         <th>Nesting Period</th>
@@ -59,6 +76,8 @@
       </tr>
       <tr>
         <td>Blackbird</td>
+        <td><em>Turdus merula</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>2-4 years</td>
         <td>Hedgerows, trees</td>
         <td>April - July</td>
@@ -67,6 +86,8 @@
       </tr>
       <tr>
         <td>Blackcap</td>
+        <td><em>Sylvia atricapilla</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>2-3 years</td>
         <td>Hedgerows, shrubs</td>
         <td>April - July</td>
@@ -75,6 +96,8 @@
       </tr>
       <tr>
         <td>Blue Tit</td>
+        <td><em>Cyanistes caeruleus</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>2-3 years</td>
         <td>Hole in trees or nest boxes</td>
         <td>April - June</td>
@@ -83,6 +106,8 @@
       </tr>
       <tr>
         <td>Bullfinch</td>
+        <td><em>Pyrrhula pyrrhula</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>2-4 years</td>
         <td>Bushes and hedgerows</td>
         <td>April - July</td>
@@ -91,6 +116,8 @@
       </tr>
       <tr>
         <td>Dunnock</td>
+        <td><em>Prunella modularis</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>2-3 years</td>
         <td>Low bushes, hedges</td>
         <td>March - July</td>
@@ -99,6 +126,8 @@
       </tr>
       <tr>
         <td>Goldfinch</td>
+        <td><em>Carduelis carduelis</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>2-3 years</td>
         <td>Tall weeds, bushes</td>
         <td>May - July</td>
@@ -107,6 +136,8 @@
       </tr>
       <tr>
         <td>Great Spotted Woodpecker</td>
+        <td><em>Dendrocopos major</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>3-4 years</td>
         <td>Tree holes</td>
         <td>April - May</td>
@@ -115,6 +146,8 @@
       </tr>
       <tr>
         <td>Great Tit</td>
+        <td><em>Parus major</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>2-3 years</td>
         <td>Hole in trees or nest boxes</td>
         <td>April - June</td>
@@ -123,6 +156,8 @@
       </tr>
       <tr>
         <td>Green Woodpecker</td>
+        <td><em>Picus viridis</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>3-7 years</td>
         <td>Tree holes and old wood</td>
         <td>April - June</td>
@@ -131,6 +166,8 @@
       </tr>
       <tr>
         <td>Jackdaw</td>
+        <td><em>Corvus monedula</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>3-4 years</td>
         <td>Buildings, trees, cliffs</td>
         <td>April - July</td>
@@ -139,6 +176,8 @@
       </tr>
       <tr>
         <td>Jay</td>
+        <td><em>Garrulus glandarius</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>5-7 years</td>
         <td>Woodlands, parks, gardens</td>
         <td>March - July</td>
@@ -147,6 +186,8 @@
       </tr>
       <tr>
         <td>Long-tailed Tit</td>
+        <td><em>Aegithalos caudatus</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>2-3 years</td>
         <td>Shrubbery, hedgerows</td>
         <td>April - June</td>
@@ -155,6 +196,8 @@
       </tr>
       <tr>
         <td>Magpie</td>
+        <td><em>Pica pica</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>3-5 years</td>
         <td>Trees, shrubs, and buildings</td>
         <td>March - July</td>
@@ -163,6 +206,8 @@
       </tr>
       <tr>
         <td>Nuthatch</td>
+        <td><em>Sitta europaea</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>2-4 years</td>
         <td>Tree cavities, walls</td>
         <td>April - June</td>
@@ -171,6 +216,8 @@
       </tr>
       <tr>
         <td>Redwing</td>
+        <td><em>Turdus iliacus</em></td>
+        <td><span class="status-badge nt">NT</span></td>
         <td>2-4 years</td>
         <td>Hedgerows, trees</td>
         <td>April - July</td>
@@ -179,6 +226,8 @@
       </tr>
       <tr>
         <td>Robin</td>
+        <td><em>Erithacus rubecula</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>1-3 years</td>
         <td>Hedgerows, shrubs, and trees</td>
         <td>March - August</td>
@@ -187,6 +236,8 @@
       </tr>
       <tr>
         <td>Wren</td>
+        <td><em>Troglodytes troglodytes</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>1-3 years</td>
         <td>Crevices, dense shrubs</td>
         <td>April - August</td>
@@ -195,6 +246,8 @@
       </tr>
       <tr>
         <td>Wood Pigeon</td>
+        <td><em>Columba palumbus</em></td>
+        <td><span class="status-badge lc">LC</span></td>
         <td>3-5 years</td>
         <td>Trees, buildings, cliffs</td>
         <td>Year-round</td>
@@ -203,11 +256,278 @@
       </tr>
     </table>
   </section>
+  </div>
+
+  <div id="countryside-tab" class="tab-content" style="display: none;">
+  <section class="table-responsive" aria-labelledby="countryside-table-title">
+    <h2 id="countryside-table-title" class="sr-only">Countryside birds table</h2>
+    <table>
+      <caption class="kv">Countryside birds – lifespan, nesting and diet</caption>
+      <tr>
+        <th>Type</th>
+        <th>Latin Name</th>
+        <th>Status</th>
+        <th>Lifespan</th>
+        <th>Where Nest</th>
+        <th>Nesting Period</th>
+        <th>Number of Eggs</th>
+        <th>Type of Food</th>
+      </tr>
+      <tr>
+        <td>Pheasant</td>
+        <td><em>Phasianus colchicus</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td>2-4 years</td>
+        <td>Ground nests in grass</td>
+        <td>April - June</td>
+        <td>8-15 eggs</td>
+        <td>Seeds, grains, insects</td>
+      </tr>
+      <tr>
+        <td>Stonechat</td>
+        <td><em>Saxicola rubicola</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td>2-3 years</td>
+        <td>Low bushes, gorse</td>
+        <td>April - July</td>
+        <td>5-6 eggs</td>
+        <td>Insects, spiders</td>
+      </tr>
+    </table>
+  </section>
+  </div>
+
+  <div id="water-tab" class="tab-content" style="display: none;">
+  <section class="table-responsive" aria-labelledby="water-table-title">
+    <h2 id="water-table-title" class="sr-only">Water birds table</h2>
+    <table>
+      <caption class="kv">Water birds – lifespan, nesting and diet</caption>
+      <tr>
+        <th>Type</th>
+        <th>Latin Name</th>
+        <th>Status</th>
+        <th>Lifespan</th>
+        <th>Where Nest</th>
+        <th>Nesting Period</th>
+        <th>Number of Eggs</th>
+        <th>Type of Food</th>
+      </tr>
+      <tr>
+        <td>Coot</td>
+        <td><em>Fulica atra</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td>3-5 years</td>
+        <td>Waterside vegetation</td>
+        <td>April - June</td>
+        <td>6-9 eggs</td>
+        <td>Aquatic plants, insects</td>
+      </tr>
+      <tr>
+        <td>Moorhen</td>
+        <td><em>Gallinula chloropus</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td>2-3 years</td>
+        <td>Waterside vegetation</td>
+        <td>March - July</td>
+        <td>5-11 eggs</td>
+        <td>Plants, insects, small fish</td>
+      </tr>
+      <tr>
+        <td>Mallard</td>
+        <td><em>Anas platyrhynchos</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td>5-10 years</td>
+        <td>Ground near water</td>
+        <td>March - June</td>
+        <td>9-13 eggs</td>
+        <td>Seeds, insects, aquatic plants</td>
+      </tr>
+      <tr>
+        <td>Mute Swan</td>
+        <td><em>Cygnus olor</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td>10-20 years</td>
+        <td>Large nest near water</td>
+        <td>April - May</td>
+        <td>5-8 eggs</td>
+        <td>Aquatic vegetation</td>
+      </tr>
+      <tr>
+        <td>Canada Goose</td>
+        <td><em>Branta canadensis</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td>10-24 years</td>
+        <td>Ground near water</td>
+        <td>April - May</td>
+        <td>4-7 eggs</td>
+        <td>Grasses, grains</td>
+      </tr>
+      <tr>
+        <td>Greylag Goose</td>
+        <td><em>Anser anser</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td>15-20 years</td>
+        <td>Ground in reeds</td>
+        <td>April - May</td>
+        <td>4-6 eggs</td>
+        <td>Grasses, grains</td>
+      </tr>
+    </table>
+  </section>
+  </div>
+
+  <div id="seabirds-tab" class="tab-content" style="display: none;">
+  <section class="table-responsive" aria-labelledby="seabirds-table-title">
+    <h2 id="seabirds-table-title" class="sr-only">Seabirds table</h2>
+    <table>
+      <caption class="kv">Seabirds – lifespan, nesting and diet</caption>
+      <tr>
+        <th>Type</th>
+        <th>Latin Name</th>
+        <th>Status</th>
+        <th>Lifespan</th>
+        <th>Where Nest</th>
+        <th>Nesting Period</th>
+        <th>Number of Eggs</th>
+        <th>Type of Food</th>
+      </tr>
+      <tr>
+        <td>Black-headed Gull</td>
+        <td><em>Chroicocephalus ridibundus</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td>10-15 years</td>
+        <td>Ground colonies</td>
+        <td>April - June</td>
+        <td>2-3 eggs</td>
+        <td>Fish, insects, worms</td>
+      </tr>
+      <tr>
+        <td>Herring Gull</td>
+        <td><em>Larus argentatus</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td>10-15 years</td>
+        <td>Cliffs, rooftops</td>
+        <td>April - June</td>
+        <td>2-3 eggs</td>
+        <td>Fish, carrion, scraps</td>
+      </tr>
+      <tr>
+        <td>Common Tern</td>
+        <td><em>Sterna hirundo</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td>10-15 years</td>
+        <td>Beaches, islands</td>
+        <td>May - July</td>
+        <td>2-3 eggs</td>
+        <td>Small fish</td>
+      </tr>
+      <tr>
+        <td>Curlew</td>
+        <td><em>Numenius arquata</em></td>
+        <td><span class="status-badge nt">NT</span></td>
+        <td>10-20 years</td>
+        <td>Moorland, grassland</td>
+        <td>April - May</td>
+        <td>4 eggs</td>
+        <td>Worms, insects, crustaceans</td>
+      </tr>
+    </table>
+  </section>
+  </div>
+
+  <div id="raptors-tab" class="tab-content" style="display: none;">
+  <section class="table-responsive" aria-labelledby="raptors-table-title">
+    <h2 id="raptors-table-title" class="sr-only">Raptors table</h2>
+    <table>
+      <caption class="kv">Raptors – lifespan, nesting and diet</caption>
+      <tr>
+        <th>Type</th>
+        <th>Latin Name</th>
+        <th>Status</th>
+        <th>Lifespan</th>
+        <th>Where Nest</th>
+        <th>Nesting Period</th>
+        <th>Number of Eggs</th>
+        <th>Type of Food</th>
+      </tr>
+      <tr>
+        <td>Barn Owl</td>
+        <td><em>Tyto alba</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td>4-10 years</td>
+        <td>Tree cavities, buildings</td>
+        <td>March - June</td>
+        <td>4-7 eggs</td>
+        <td>Small mammals, birds</td>
+      </tr>
+      <tr>
+        <td>Common Buzzard</td>
+        <td><em>Buteo buteo</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td>12-25 years</td>
+        <td>Trees, cliffs</td>
+        <td>March - May</td>
+        <td>2-4 eggs</td>
+        <td>Small mammals, birds, carrion</td>
+      </tr>
+      <tr>
+        <td>Red Kite</td>
+        <td><em>Milvus milvus</em></td>
+        <td><span class="status-badge nt">NT</span></td>
+        <td>20-25 years</td>
+        <td>Trees in woodland</td>
+        <td>April - May</td>
+        <td>2-3 eggs</td>
+        <td>Small mammals, carrion, worms</td>
+      </tr>
+      <tr>
+        <td>Sparrowhawk</td>
+        <td><em>Accipiter nisus</em></td>
+        <td><span class="status-badge lc">LC</span></td>
+        <td>4-7 years</td>
+        <td>Trees</td>
+        <td>April - June</td>
+        <td>4-6 eggs</td>
+        <td>Small birds</td>
+      </tr>
+    </table>
+  </section>
+  </div>
 </main>
 
 <footer class="site-footer container">
   <p>&copy; 2025 My Bird Photographs by Simon Wood</p>
 </footer>
 
-<script src="scripts.js">
+<script src="scripts.js"></script>
+
+<style>
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block !important;
+}
+.tab-btn.active {
+  background: var(--accent) !important;
+  color: white !important;
+  font-weight: bold;
+}
+</style>
+
+<script>
+// Tab switching
+document.querySelectorAll('.tab-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove active class from all buttons and contents
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+    
+    // Add active class to clicked button and corresponding content
+    button.classList.add('active');
+    const tabId = button.getAttribute('data-tab');
+    document.getElementById(tabId).classList.add('active');
+  });
+});
+</script>
 

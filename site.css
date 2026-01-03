@@ -82,11 +82,59 @@ main{padding-bottom:40px}
 .gallery-item{background:var(--card);border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(16,48,72,0.04)}
 .gallery-item img{width:100%;height:320px;object-fit:cover;display:block}
 .figure-caption{padding:8px;font-size:0.9rem;color:var(--muted)}
+.figure-caption .common-name{display:block;font-weight:600;color:var(--text);margin-bottom:2px}
+.figure-caption .latin-name{display:block;font-style:italic;font-size:0.85rem;color:var(--muted);margin-bottom:4px}
+.status-badge{display:inline-block;padding:2px 6px;border-radius:4px;font-size:0.75rem;font-weight:600;margin-left:4px}
+.status-badge.lc{background:#d4edda;color:#155724}
+.status-badge.nt{background:#fff3cd;color:#856404}
+.status-badge.vu{background:#ffe5cc;color:#cc5500}
+.status-badge.en{background:#f8d7da;color:#721c24}
+.status-badge.cr{background:#f5c6cb;color:#491217}
 
 /* Hero image */
 .hero{display:flex;align-items:center;gap:18px;background:linear-gradient(180deg,rgba(255,255,255,0.7),transparent);padding:18px;border-radius:12px;margin-bottom:20px}
 .hero .hero-inner{flex:1}
-.hero-image{height:320px;width:auto;border-radius:8px;object-fit:cover;box-shadow:0 6px 18px rgba(16,48,72,0.12);}
+.hero-image{width:480px;height:320px;border-radius:8px;object-fit:cover;box-shadow:0 6px 18px rgba(16,48,72,0.12);}
+
+/* Featured galleries */
+.featured{margin:30px 0}
+.featured h2{color:var(--accent);margin-bottom:20px}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.feature{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 12px rgba(16,48,72,0.06);transition:transform 0.2s,box-shadow 0.2s}
+.feature:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(16,48,72,0.12)}
+.feature img{width:100%;height:320px;object-fit:cover;display:block}
+.feature h3{margin:0;padding:12px 16px 8px;font-size:1.1rem}
+.feature h3 a{text-decoration:none;color:var(--text)}
+.feature h3 a:hover{color:var(--accent)}
+.feature p{margin:0;padding:0 16px 16px;color:var(--muted);font-size:0.9rem}
+
+/* Latest additions */
+.latest{margin:30px 0;padding:24px;background:var(--card);border-radius:var(--radius);box-shadow:0 4px 12px rgba(16,48,72,0.06)}
+.latest h2{margin-top:0;color:var(--accent)}
+.latest-list{margin:0;padding-left:20px;color:var(--text)}
+.latest-list li{margin-bottom:8px}
+
+/* About section */
+.about{margin:30px 0;padding:24px;background:var(--card);border-radius:var(--radius);box-shadow:0 4px 12px rgba(16,48,72,0.06)}
+.about h2{margin-top:0;color:var(--accent)}
+.about p{line-height:1.6;color:var(--text)}
+.about a{color:var(--accent);text-decoration:none}
+.about a:hover{text-decoration:underline}
+
+/* CTA buttons */
+.cta{display:flex;gap:12px;margin-top:16px}
+.btn{display:inline-block;padding:12px 24px;background:var(--accent);color:#fff;text-decoration:none;border-radius:8px;font-weight:600;transition:background 0.2s}
+.btn:hover,.btn:focus{background:#0a5e8a}
+.btn.ghost{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+.btn.ghost:hover,.btn.ghost:focus{background:var(--accent);color:#fff}
+
+/* Tab navigation */
+.tab-nav{display:flex;gap:4px;margin:20px 0;border-bottom:2px solid #e5e9ed;flex-wrap:wrap}
+.tab-btn{padding:12px 20px;background:transparent;border:none;border-bottom:3px solid transparent;color:var(--muted);font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.2s}
+.tab-btn:hover{color:var(--accent);background:#f9fbfd}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);background:#f9fbfd}
+.tab-content{display:none}
+.tab-content.active{display:block}
 
 /* Footer */
 .site-footer{font-size:0.9rem;color:var(--muted);padding:18px 0;border-top:1px solid #eef3f8;margin-top:24px}
@@ -146,8 +194,12 @@ main{padding-bottom:40px}
 /* Small screens tweaks */
 @media(max-width:720px){
   .hero{flex-direction:column;align-items:flex-start}
-  .hero-image{width:100%;height:220px}
+  .hero-image{width:100%;height:240px}
   .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+  .feature-grid{grid-template-columns:1fr}
+  .feature img{height:240px}
+  .cta{flex-direction:column}
+  .btn{text-align:center}
 }
 @media(max-width:420px){
   .brand{align-items:flex-start}
