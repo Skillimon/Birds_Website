@@ -148,13 +148,13 @@
   // Database of birds and their locations across the site
   const birdDatabase = {
     'garden_birds.html': [
-      'Blackbird (F)', 'Blackbird (M)', 'Blackcap (F)', 'Blackcap (M)', 'Blue Tit', 'Bullfinch', 'Chaffinch (M)', 'Chaffinch (F)', 'Coal Tit', 'Collared Dove', 'Dunnock', 'Goldfinch', 'Goldcrest', 'Great Tit', 'House Sparrow', 'Long Tailed Tit', 'Mistle Thrush', 'Nuthatch', 'Redwing', 'Robin', 'Song Thrush', 'Starling', 'Tree Sparrow', 'Wren', 'Wood Pigeon'
+      'Blackbird (F)', 'Blackbird (M)', 'Blackcap (F)', 'Blackcap (M)', 'Blue Tit', 'Bullfinch', 'Chaffinch (M)', 'Chaffinch (F)', 'Coal Tit', 'Dunnock', 'Goldfinch', 'Goldcrest', 'Great Tit', 'House Sparrow', 'Long Tailed Tit', 'Mistle Thrush', 'Nuthatch', 'Redwing', 'Robin', 'Song Thrush', 'Starling', 'Tree Sparrow', 'Wren', 'Wood Pigeon'
     ],
     'countryside.html': [
       'Collared Dove', 'Goldfinch', 'Green Woodpecker', 'Great Spotted Woodpecker', 'Jackdaw', 'Jay', 'Magpie', 'Red-legged Partridge', 'Pheasant', 'Rook', 'Stonechat'
     ],
     'water_birds.html': [
-      'Ash Headed Goose', 'Bar Headed Goose', 'Barrows Goldeneye', 'Bufflehead', 'Canada Goose', 'Chiloe Wigeon', 'Common Redshank', 'Common Crane', 'Common Goldeneye', 'Common Kingfisher', 'Common Sandpiper', 'Common Shelduck', 'Coot', 'Coscoroba Swan', 'Eurasian Spoonbill', 'Flamingo', 'Garganey', 'Greater Flamingo', 'Greater Scaup', 'Greylag Goose', 'Hooded Merganser', 'Kingfisher', 'Knob Billed Duck', 'Lesser White Fronted Goose', 'Little Egret', 'Little Grebe', 'Magellanic Goose', 'Mallard', 'Mallard Duck', 'Masked Lapwing', 'Mareca', 'Moorhen', 'Mute Swan', 'Netta'
+      'Ash Headed Goose', 'Barrows Goldeneye', 'Bufflehead', 'Common Goldeneye', 'Common Redshank', 'Common Crane', 'Coot', 'Coscoroba Swan', 'Egret', 'Little Grebe', 'Greylag Goose', 'Lesser White Fronted Goose', 'Bar Headed Goose', 'Canada Goose', 'Chiloe Wigeon', 'Flamingo', 'Garganey', 'Hooded Merganser', 'Common Kingfisher', 'Knob Billed Duck', 'Magellanic Goose', 'Mallard', 'Mallard Duck', 'Masked Lapwing', 'Mareca', 'Moorhen', 'Netta', 'Oxyura', 'Teal', 'Tufted Duck', 'Pied Avocet', 'Puna Teal', 'Redhead Duck', 'Red-breasted Merganser', 'Northern Pintail', 'Redshank', 'Ringed Teal', 'Ruddy Shelduck', 'Ruff', 'Common Sandpiper', 'Greater Scaup', 'Common Shelduck', 'Smew', 'Southern Screamer', 'Eurasian Spoonbill', 'Swan Goose', 'Mute Swan', 'Whooper Swan', 'Black Necked Swan', 'Water Rail', 'White-faced Whistling Duck', 'Wigeon', 'Chiloe Widgeon', 'Yellowhammer'
     ],
     'sea_birds.html': [
       'Black-headed Gull', 'Curlew', 'Eurasian Oystercatcher', 'Gannet', 'Great Cormorant', 'Guillemot', 'Egret', 'Gull', 'Kittiwake', 'Pelican', 'Tern'
@@ -163,7 +163,7 @@
       'Bald Eagle', 'Barn Owl', 'Barn Owl (landing)', 'Common Buzzard', 'Peregrine Falcon', 'African Fish Eagle', 'Golden Eagle', 'Hen Harrier', 'Kestrel', 'Long Eared Owl', 'Tawny Owl', 'Great Grey Owl', 'Red Kite', 'Griffon Vulture', 'Gyrfalcon'
     ],
     'australia_birds.html': [
-      'Australian Magpie', 'Australian Ringneck', 'Bar Shouldered Dove', 'Black Parrot', 'Black Swan', 'Blue Faced Honeyeater', 'Brahminy Kite', 'Brush Turkey', 'Bush Stone Curlew', 'Butcher Bird', 'Cockatoo', 'Cockatoos', 'Cormorant', 'Crimson Finch', 'Crimson Rosella', 'Ducula', 'Egret', 'Emerald Dove', 'Emu', 'Fruit Dove', 'Galah', 'Greater Crested Tern', 'Green Ringneck Parrot', 'Jacada', 'Kingfisher', 'Kookaboro', 'Kookaboro 2', 'Little Pied Cormorant', 'Loon'
+      'Australian Magpie', 'Australian Ringneck', 'Bar Shouldered Dove', 'Black Parrot', 'Black Swan', 'Blue Faced Honeyeater', 'Brahminy Kite', 'Brush Turkey', 'Bush Stone Curlew', 'Butcher Bird', 'Cockatoo', 'Cockatoos', 'Ducula', 'Cormorant', 'Crimson Finch', 'Crimson Rosella', 'Egret', 'Emerald Dove', 'Emu', 'Fruit Dove', 'Galah', 'Greater Crested Tern', 'Green Ringneck Parrot', 'Jacada', 'Kingfisher', 'Kookaboro', 'Kookaboro 2', 'Little Pied Cormorant', 'Loon', 'Magpie Goose', 'Magpie Goose Flying', 'Masked Lapwing', 'Merops', 'Mute Swan', 'Peacock', 'Pelican', 'Pied Currawong', 'Pied Imperial Pigeon', 'Pied Oystercatcher', 'Red-collared Lorikeet', 'Shelduck', 'Spinifex Pigeon', 'Straw-necked Ibis', 'White-Bellied Sea Eagle', 'Wandering Whistling Duck', 'Welcome Swallow', 'White-Necked Heron', 'Yellow-Throated Miner'
     ],
     'world.html': [
       'Common Myna', 'Limpkin', 'Ostrich', 'Penguin', 'Hoopoe', 'Hooded Crow', 'Otter', 'Red Whiskered Bulbul', 'Roulroul Partridge', 'Rose Ringed Parakeet', 'Seals', 'Turkey Vulture'
