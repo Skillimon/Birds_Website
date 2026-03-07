@@ -136,25 +136,42 @@
 
 // Bird search functionality
 (function(){
+
   const searchInput = document.getElementById('bird-search');
   const searchBtn = document.getElementById('search-btn');
+  const dateInput = document.getElementById('date-search');
+  const dateBtn = document.getElementById('date-search-btn');
   const searchResults = document.getElementById('search-results');
 
-  if(!searchInput || !searchBtn || !searchResults) return;
+  if(!searchInput || !searchBtn || !searchResults || !dateInput || !dateBtn) return;
 
   // Database of birds and their locations across the site
   const birdDatabase = {
-    'Garden_Birds.html': ['Blackbird', 'Blackcap', 'Blue Tit', 'Bullfinch', 'Chaffinch', 'Collared Dove', 'Dunnock', 'Goldcrest', 'Goldfinch', 'Great Tit', 'Green Woodpecker', 'House Sparrow', 'Jackdaw', 'Jay', 'Long Tailed Tit', 'Magpie', 'Mistle Thrush', 'Nuthatch', 'Redwing', 'Robin', 'Song Thrush', 'Starling', 'Wood Pigeon', 'Woodpecker', 'Wren'],
-    'countryside.html': ['Great Spotted Woodpecker', 'Green Woodpecker', 'Jackdaw', 'Jay', 'Magpie', 'Pheasant', 'Rook', 'Stonechat'],
-    'water_birds.html': ['Ash Headed Goose', 'Bar Headed Goose', 'Barrows Goldeneye', 'Black Necked Swan', 'Bufflehead', 'Canada Goose', 'Chiloe Widgeon', 'Common Crane', 'Common Goldeneye', 'Common Kingfisher', 'Common Sandpiper', 'Common Shelduck', 'Coot', 'Eurasian Spoonbill', 'Greater Flamingo', 'Greater Scaup', 'Greylag Goose', 'Kingfisher', 'Knob Billed Duck', 'Lesser White Fronted Goose', 'Little Egret', 'Little Grebe', 'Mallard', 'Moorhen', 'Mute Swan', 'Netta', 'Pied Avocet', 'Redhead Duck', 'Ruddy Duck', 'Ruddy Shelduck', 'Teal', 'Tufted Duck', 'Whooper Swan', 'Yellowhammer'],
-    'sea_birds.html': ['Black-headed Gull', 'Curlew', 'Egret', 'Eurasian Oystercatcher', 'Gannet', 'Guillemot', 'Gull', 'Kittiwake', 'Pelican', 'Tern'],
-    'birds_of_prey.html': ['Bald Eagle', 'Barn Owl', 'Common Buzzard', 'Falcon', 'Fish Eagle', 'Golden Eagle', 'Great Grey Owl', 'Hen Harrier', 'Kestrel', 'Long Eared Owl', 'Owl', 'Red Kite', 'Tawny Owl', 'Vulture', 'White Falcon'],
-    'australia_birds.html': ['Australian Magpie', 'Australian Ringneck', 'Bar Shouldered Dove', 'Black Parrot', 'Black Swan', 'Blue Faced Honeyeater', 'Brahminy Kite', 'Brush Turkey', 'Bush Stone Curlew', 'Butcher Bird', 'Cockatoo', 'Cockatoos', 'Cormorant', 'Crimson Finch', 'Crimson Rosella', 'Ducula', 'Egret', 'Emerald Dove', 'Emu', 'Galah', 'Greater Crested Tern', 'Green Ringneck Parrot', 'Jacada', 'Kingfisher', 'Kookaburra', 'Little Pied Cormorant', 'Loon', 'Magpie Goose', 'Masked Lapwing', 'Merops', 'Mute Swan', 'Peacock', 'Pelican', 'Pied Currawong', 'Pied Imperial Pigeon', 'Pied Oystercatcher', 'Red-collared Lorikeet', 'Shelduck', 'Spinifex Pigeon', 'Straw-necked Ibis', 'Welcome Swallow', 'White-Bellied Sea Eagle', 'White-Necked Heron', 'Yellow-Throated Miner'],
-    'world.html': ['Limpkin', 'Ostrich', 'Otter', 'Penguin', 'Red Whiskered Bulbul', 'Roulroul Partridge', 'Seals']
+    'garden_birds.html': [
+      'Blackbird (F)', 'Blackbird (M)', 'Blackcap (F)', 'Blackcap (M)', 'Blue Tit', 'Bullfinch', 'Chaffinch (M)', 'Chaffinch (F)', 'Coal Tit', 'Collared Dove', 'Dunnock', 'Goldfinch', 'Goldcrest', 'Great Tit', 'House Sparrow', 'Long Tailed Tit', 'Mistle Thrush', 'Nuthatch', 'Redwing', 'Robin', 'Song Thrush', 'Starling', 'Tree Sparrow', 'Wren', 'Wood Pigeon'
+    ],
+    'countryside.html': [
+      'Collared Dove', 'Goldfinch', 'Green Woodpecker', 'Great Spotted Woodpecker', 'Jackdaw', 'Jay', 'Magpie', 'Red-legged Partridge', 'Pheasant', 'Rook', 'Stonechat'
+    ],
+    'water_birds.html': [
+      'Ash Headed Goose', 'Bar Headed Goose', 'Barrows Goldeneye', 'Bufflehead', 'Canada Goose', 'Chiloe Wigeon', 'Common Redshank', 'Common Crane', 'Common Goldeneye', 'Common Kingfisher', 'Common Sandpiper', 'Common Shelduck', 'Coot', 'Coscoroba Swan', 'Eurasian Spoonbill', 'Flamingo', 'Garganey', 'Greater Flamingo', 'Greater Scaup', 'Greylag Goose', 'Hooded Merganser', 'Kingfisher', 'Knob Billed Duck', 'Lesser White Fronted Goose', 'Little Egret', 'Little Grebe', 'Magellanic Goose', 'Mallard', 'Mallard Duck', 'Masked Lapwing', 'Mareca', 'Moorhen', 'Mute Swan', 'Netta'
+    ],
+    'sea_birds.html': [
+      'Black-headed Gull', 'Curlew', 'Eurasian Oystercatcher', 'Gannet', 'Great Cormorant', 'Guillemot', 'Egret', 'Gull', 'Kittiwake', 'Pelican', 'Tern'
+    ],
+    'birds_of_prey.html': [
+      'Bald Eagle', 'Barn Owl', 'Barn Owl (landing)', 'Common Buzzard', 'Peregrine Falcon', 'African Fish Eagle', 'Golden Eagle', 'Hen Harrier', 'Kestrel', 'Long Eared Owl', 'Tawny Owl', 'Great Grey Owl', 'Red Kite', 'Griffon Vulture', 'Gyrfalcon'
+    ],
+    'australia_birds.html': [
+      'Australian Magpie', 'Australian Ringneck', 'Bar Shouldered Dove', 'Black Parrot', 'Black Swan', 'Blue Faced Honeyeater', 'Brahminy Kite', 'Brush Turkey', 'Bush Stone Curlew', 'Butcher Bird', 'Cockatoo', 'Cockatoos', 'Cormorant', 'Crimson Finch', 'Crimson Rosella', 'Ducula', 'Egret', 'Emerald Dove', 'Emu', 'Fruit Dove', 'Galah', 'Greater Crested Tern', 'Green Ringneck Parrot', 'Jacada', 'Kingfisher', 'Kookaboro', 'Kookaboro 2', 'Little Pied Cormorant', 'Loon'
+    ],
+    'world.html': [
+      'Common Myna', 'Limpkin', 'Ostrich', 'Penguin', 'Hoopoe', 'Hooded Crow', 'Otter', 'Red Whiskered Bulbul', 'Roulroul Partridge', 'Rose Ringed Parakeet', 'Seals', 'Turkey Vulture'
+    ]
   };
 
   const pageNames = {
-    'Garden_Birds.html': 'Garden Birds',
+    'garden_birds.html': 'Garden Birds',
     'countryside.html': 'Countryside Birds',
     'water_birds.html': 'Water Birds',
     'sea_birds.html': 'Seabirds',
@@ -162,6 +179,7 @@
     'australia_birds.html': 'Australian Birds',
     'world.html': 'World Birds'
   };
+
 
   function performSearch(){
     const query = searchInput.value.trim().toLowerCase();
@@ -172,7 +190,6 @@
     }
 
     const results = [];
-    
     // Search through all pages
     for(const [page, birds] of Object.entries(birdDatabase)){
       birds.forEach(bird => {
@@ -185,27 +202,102 @@
         }
       });
     }
-
-    displayResults(results, query);
+    displayResults(results, query, 'bird');
   }
 
-  function displayResults(results, query){
+  // Date search implementation
+  // For each gallery, scan the DOM for captions and match the date string
+  function performDateSearch(){
+    const dateQuery = dateInput.value.trim().toLowerCase();
+    if(!dateQuery){
+      searchResults.classList.remove('active');
+      searchResults.innerHTML = '';
+      return;
+    }
+
+    // List of gallery pages to search
+    const galleryPages = [
+      'garden_birds.html',
+      'countryside.html',
+      'water_birds.html',
+      'sea_birds.html',
+      'birds_of_prey.html',
+      'australia_birds.html',
+      'world.html'
+    ];
+
+    // Helper to fetch and parse a gallery page
+    function fetchGallery(page) {
+      return fetch(page)
+        .then(r => r.text())
+        .then(html => {
+          // Create a DOM parser
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          // Find all figures
+          const figures = Array.from(doc.querySelectorAll('.gallery-item'));
+          return figures.map(fig => {
+            const bird = fig.querySelector('.common-name')?.textContent?.trim() || '';
+            // Use innerHTML to replace <br> with spaces for robust date search
+            let caption = '';
+            const capElem = fig.querySelector('.figure-caption');
+            if (capElem) {
+              caption = capElem.innerHTML.replace(/<br\s*\/?>(\s*)?/gi, ' ');
+              // Remove any remaining HTML tags (just in case)
+              caption = caption.replace(/<[^>]+>/g, '');
+            }
+            caption = caption.trim();
+            return { bird, caption, page };
+          });
+        });
+    }
+
+    // Fetch all galleries and search for date
+    Promise.all(galleryPages.map(fetchGallery)).then(allResults => {
+      const flat = allResults.flat();
+      // Debug output: show how many items and sample captions
+      let debugHtml = '<details style="margin:1em 0;"><summary>Debug: ' + flat.length + ' gallery items parsed</summary><ul>';
+      flat.slice(0, 10).forEach(item => {
+        debugHtml += '<li>' + escapeHtml(item.caption) + '</li>';
+      });
+      debugHtml += '</ul></details>';
+
+      function normalize(text) {
+        return text.replace(/\s+/g, ' ').trim().toLowerCase();
+      }
+      const normQuery = dateQuery.replace(/\s+/g, ' ').trim().toLowerCase();
+      const matches = flat.filter(item => normalize(item.caption).includes(normQuery));
+      let html = '';
+      if(matches.length === 0){
+        html = '<div class="no-results">No birds found for date "' + escapeHtml(dateQuery) + '". Try searching for a year (e.g., 2020) or month/year (e.g., Mar 2020).</div>';
+      } else {
+        html = '<div class="search-results-header">Found ' + matches.length + ' result' + (matches.length !== 1 ? 's' : '') + ' for date "' + escapeHtml(dateQuery) + '":</div>';
+        matches.forEach(result => {
+          html += '<div class="search-result-item">';
+          html += '<a href="' + result.page + '">' + escapeHtml(result.bird) + '</a>';
+          html += '<div class="search-result-page">In: ' + escapeHtml(pageNames[result.page] || result.page) + '</div>';
+          html += '<div class="search-result-caption">' + escapeHtml(result.caption) + '</div>';
+          html += '</div>';
+        });
+      }
+      searchResults.classList.add('active');
+      searchResults.innerHTML = debugHtml + html;
+    });
+  }
+
+  function displayResults(results, query, type){
     searchResults.classList.add('active');
-    
     if(results.length === 0){
       searchResults.innerHTML = '<div class="no-results">No birds found matching "' + escapeHtml(query) + '". Try searching for common names like "Blue Tit", "Robin", or "Owl".</div>';
       return;
     }
-
     let html = '<div class="search-results-header">Found ' + results.length + ' result' + (results.length !== 1 ? 's' : '') + ' for "' + escapeHtml(query) + '":</div>';
-    
     results.forEach(result => {
       html += '<div class="search-result-item">';
       html += '<a href="' + result.page + '">' + escapeHtml(result.bird) + '</a>';
       html += '<div class="search-result-page">In: ' + escapeHtml(result.pageName) + '</div>';
       html += '</div>';
     });
-
     searchResults.innerHTML = html;
   }
 
@@ -216,17 +308,29 @@
   }
 
   searchBtn.addEventListener('click', performSearch);
-  
   searchInput.addEventListener('keypress', function(e){
     if(e.key === 'Enter'){
       e.preventDefault();
       performSearch();
     }
   });
-
+  // Date search events
+  dateBtn.addEventListener('click', performDateSearch);
+  dateInput.addEventListener('keypress', function(e){
+    if(e.key === 'Enter'){
+      e.preventDefault();
+      performDateSearch();
+    }
+  });
   // Clear results when input is cleared
   searchInput.addEventListener('input', function(){
     if(!searchInput.value.trim()){
+      searchResults.classList.remove('active');
+      searchResults.innerHTML = '';
+    }
+  });
+  dateInput.addEventListener('input', function(){
+    if(!dateInput.value.trim()){
       searchResults.classList.remove('active');
       searchResults.innerHTML = '';
     }
