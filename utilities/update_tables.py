@@ -5,7 +5,7 @@ Script to update bird tables with migration status column
 import re
 
 # Read the file
-with open('bird_table_2024.html', 'r', encoding='utf-8') as f:
+with open('bird_data_table.html', 'r', encoding='utf-8') as f:
     content = f.read()
 
 # Birds to move from Garden to Countryside

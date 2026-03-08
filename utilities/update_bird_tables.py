@@ -3,7 +3,7 @@
 import re
 
 # Read the HTML file
-with open('bird_table_2024.html', 'r', encoding='utf-8') as f:
+with open('bird_data_table.html', 'r', encoding='utf-8') as f:
     lines = f.readlines()
 
 output_lines = []
@@ -64,7 +64,7 @@ for i, line in enumerate(lines):
     output_lines.append(line)
 
 # Write back
-with open('bird_table_2024.html', 'w', encoding='utf-8') as f:
+with open('bird_data_table.html', 'w', encoding='utf-8') as f:
     f.writelines(output_lines)
 
 print("Updated bird tables with migration column")

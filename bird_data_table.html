@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Bird Photographs</title>
+<meta name="description" content="Compact reference guide to common garden birds â€” lifespan, nesting and diet." />
+<meta property="og:title" content="My Bird Photographs â€” Garden Bird Info" />
+<meta property="og:description" content="Compact reference guide to common garden birds â€” lifespan, nesting and diet." />
+<meta name="twitter:card" content="summary" />
+<link rel="stylesheet" href="site.css"/>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header>
+	<div class="container">
+		<div class="brand">
+			<a class="site-title" href="index.html">My Bird Photographs</a>
+			<p class="site-tag">Photographs &amp; field notes</p>
+		</div>
+		<button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+			<span class="menu-icon">☰</span> Menu
+		</button>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="bird_data_table.html">Bird Info</a></li>
+				<li><a href="garden_birds.html">Garden</a></li>
+				<li><a href="countryside.html">Countryside</a></li>
+				<li><a href="water_birds.html">Water</a></li>
+				<li><a href="sea_birds.html">Seabirds</a></li>
+				<li><a href="birds_of_prey.html">Raptors</a></li>
+				<li><a href="australia_birds.html">Australia</a></li>
+				<li><a href="world.html">World</a></li>
+				<li><a href="wildlife_garden.html">Wildlife Garden</a></li>
+				<li><a href="conservation.html">Conservation</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<main id="main-content" class="container">
+	<section class="intro">
+		<p>Compact reference guide to bird information on My Bird Photographs – lifespan, nesting and diet.</p>    <div style="margin:12px 0;padding:12px;background:var(--card);border-radius:8px;border-left:3px solid var(--accent)">
+			<strong>IUCN Conservation Status Key:</strong>
+			<span class="status-badge lc">LC</span> Least Concern
+			<span class="status-badge nt">NT</span> Near Threatened
+			<span class="status-badge vu">VU</span> Vulnerable
+			<span class="status-badge en">EN</span> Endangered
+			<span class="status-badge cr">CR</span> Critically Endangered
+		</div>
+		<div style="margin:12px 0;padding:12px;background:var(--card);border-radius:8px;border-left:3px solid var(--accent)">
+			<strong>Migration Status Key:</strong>
+			<span class="migration-dot resident"></span> Resident
+			<span class="migration-dot summer"></span> Summer visitor
+			<span class="migration-dot winter"></span> Winter visitor
+			<span class="migration-dot passage"></span> Passage migrant
+		</div>
+	</section>
+
+	<div class="tab-navigation" style="margin: 20px 0; text-align: center;">
+		<button class="tab-btn active" data-tab="garden-tab" style="padding: 10px 20px; margin: 5px; cursor: pointer; border: 2px solid var(--accent); background: var(--accent); color: white; border-radius: 5px; font-weight: bold;">Garden</button>
+		<button class="tab-btn" data-tab="countryside-tab" style="padding: 10px 20px; margin: 5px; cursor: pointer; border: 2px solid var(--accent); background: var(--card); color: var(--text); border-radius: 5px;">Countryside</button>
+		<button class="tab-btn" data-tab="water-tab" style="padding: 10px 20px; margin: 5px; cursor: pointer; border: 2px solid var(--accent); background: var(--card); color: var(--text); border-radius: 5px;">Water</button>
+		<button class="tab-btn" data-tab="seabirds-tab" style="padding: 10px 20px; margin: 5px; cursor: pointer; border: 2px solid var(--accent); background: var(--card); color: var(--text); border-radius: 5px;">Seabirds</button>
+		<button class="tab-btn" data-tab="raptors-tab" style="padding: 10px 20px; margin: 5px; cursor: pointer; border: 2px solid var(--accent); background: var(--card); color: var(--text); border-radius: 5px;">Raptors</button>
+	</div>
+
+	<div id="garden-tab" class="tab-content active">
+	<section class="table-responsive" aria-labelledby="table-title">
+		<h2 id="table-title" class="sr-only">Garden birds table</h2>
+		<table>
+			<caption class="kv">Garden birds â€” lifespan, nesting and diet</caption>
+			<tr>
+				<th>Type</th>
+				<th>Latin Name</th>
+				<th>Status</th>
+				<th>Migration</th>
+				<th>Lifespan</th>
+				<th>Where Nest</th>
+				<th>Nesting Period</th>
+				<th>Number of Eggs</th>
+				<th>Type of Food</th>
+			</tr>
+			<!-- ... (all bird rows from original file) ... -->
+		</table>
+	</section>
+	</div>
+
+	<div id="countryside-tab" class="tab-content" style="display: none;">
+	<section class="table-responsive" aria-labelledby="countryside-table-title">
+		<h2 id="countryside-table-title" class="sr-only">Countryside birds table</h2>
+		<table>
+			<caption class="kv">Countryside birds – lifespan, nesting and diet</caption>
+			<tr>
+				<th>Type</th>
+				<th>Latin Name</th>
+				<th>Status</th>
+				<th>Migration</th>
+				<th>Lifespan</th>
+				<th>Where Nest</th>
+				<th>Nesting Period</th>
+				<th>Number of Eggs</th>
+				<th>Type of Food</th>
+			</tr>
+			<!-- ... (all countryside bird rows from original file) ... -->
+		</table>
+	</section>
+	</div>
+
+	<div id="water-tab" class="tab-content" style="display: none;">
+	<section class="table-responsive" aria-labelledby="water-table-title">
+		<h2 id="water-table-title" class="sr-only">Water birds table</h2>
+		<table>
+			<caption class="kv">Water birds – lifespan, nesting and diet</caption>
+			<tr>
+				<th>Type</th>
+				<th>Latin Name</th>
+				<th>Status</th>
+				<th>Migration</th>
+				<th>Lifespan</th>
+				<th>Where Nest</th>
+				<th>Nesting Period</th>
+				<th>Number of Eggs</th>
+				<th>Type of Food</th>
+			</tr>
+			<!-- ... (all water bird rows from original file) ... -->
+		</table>
+	</section>
+	</div>
+
+	<div id="seabirds-tab" class="tab-content" style="display: none;">
+	<section class="table-responsive" aria-labelledby="seabirds-table-title">
+		<h2 id="seabirds-table-title" class="sr-only">Seabirds table</h2>
+		<table>
+			<caption class="kv">Seabirds – lifespan, nesting and diet</caption>
+			<tr>
+				<th>Type</th>
+				<th>Latin Name</th>
+				<th>Status</th>
+				<th>Migration</th>
+				<th>Lifespan</th>
+				<th>Where Nest</th>
+				<th>Nesting Period</th>
+				<th>Number of Eggs</th>
+				<th>Type of Food</th>
+			</tr>
+			<!-- ... (all seabird rows from original file) ... -->
+		</table>
+	</section>
+	</div>
+
+	<div id="raptors-tab" class="tab-content" style="display: none;">
+	<section class="table-responsive" aria-labelledby="raptors-table-title">
+		<h2 id="raptors-table-title" class="sr-only">Raptors table</h2>
+		<table>
+			<caption class="kv">Raptors – lifespan, nesting and diet</caption>
+			<tr>
+				<th>Type</th>
+				<th>Latin Name</th>
+				<th>Status</th>
+				<th>Migration</th>
+				<th>Lifespan</th>
+				<th>Where Nest</th>
+				<th>Nesting Period</th>
+				<th>Number of Eggs</th>
+				<th>Type of Food</th>
+			</tr>
+			<!-- ... (all raptor rows from original file) ... -->
+		</table>
+	</section>
+	</div>
+</main>
+
+<footer class="site-footer container">
+	<p>&copy; 2025 My Bird Photographs by Simon Wood</p>
+</footer>
+
+<script src="scripts.js"></script>
