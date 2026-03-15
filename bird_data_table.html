@@ -60,6 +60,38 @@
     </div>
   </section>
 
+  <!-- Bird Table Usability Toolbar -->
+  <div class="bird-table-toolbar" aria-label="Bird Table Controls">
+    <label for="bird-table-search" class="sr-only">Search birds</label>
+    <input type="text" id="bird-table-search" placeholder="Search birds..." autocomplete="off" />
+
+    <label for="bird-table-status" class="sr-only">Status filter</label>
+    <select id="bird-table-status">
+      <option value="">Status: All</option>
+      <option value="LC">LC</option>
+      <option value="NT">NT</option>
+      <option value="VU">VU</option>
+      <option value="EN">EN</option>
+      <option value="CR">CR</option>
+    </select>
+
+    <label for="bird-table-migration" class="sr-only">Migration filter</label>
+    <select id="bird-table-migration">
+      <option value="">Migration: All</option>
+      <option value="resident">Resident</option>
+      <option value="summer">Summer visitor</option>
+      <option value="winter">Winter visitor</option>
+      <option value="passage">Passage migrant</option>
+    </select>
+
+    <button type="button" id="bird-table-clear" class="btn">Clear Filters</button>
+    <label class="bird-images-toggle" for="bird-table-show-images">
+      <input type="checkbox" id="bird-table-show-images" checked>
+      Show images
+    </label>
+    <span id="bird-table-count" class="bird-table-count" aria-live="polite">Birds shown</span>
+  </div>
+
   <div class="tab-navigation" style="margin: 20px 0; text-align: center;">
     <button class="tab-btn active" data-tab="garden-tab" style="padding: 10px 20px; margin: 5px; cursor: pointer; border: 2px solid var(--accent); background: var(--accent); color: white; border-radius: 5px; font-weight: bold;">Garden</button>
     <button class="tab-btn" data-tab="countryside-tab" style="padding: 10px 20px; margin: 5px; cursor: pointer; border: 2px solid var(--accent); background: var(--card); color: var(--text); border-radius: 5px;">Countryside</button>
@@ -73,17 +105,20 @@
     <h2 id="table-title" class="sr-only">Garden birds table</h2>
     <table>
       <caption class="kv">Garden birds â€” lifespan, nesting and diet</caption>
-      <tr>
-        <th>Type</th>
-        <th>Latin Name</th>
-        <th>Status</th>
-        <th>Migration</th>
-        <th>Lifespan</th>
-        <th>Where Nest</th>
-        <th>Nesting Period</th>
-        <th>Number of Eggs</th>
-        <th>Type of Food</th>
-      </tr>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Latin Name</th>
+          <th>Status</th>
+          <th>Migration</th>
+          <th>Lifespan</th>
+          <th>Where Nest</th>
+          <th>Nesting Period</th>
+          <th>Number of Eggs</th>
+          <th>Type of Food</th>
+        </tr>
+      </thead>
+      <tbody>
       <tr>
         <td>Blackbird</td>
         <td><em>Turdus merula</em></td>
@@ -447,6 +482,7 @@
         <td>1-2 eggs</td>
         <td>Grains, seeds, vegetables</td>
       </tr>
+      </tbody>
     </table>
   </section>
   </div>
@@ -456,17 +492,20 @@
     <h2 id="countryside-table-title" class="sr-only">Countryside birds table</h2>
     <table>
       <caption class="kv">Countryside birds – lifespan, nesting and diet</caption>
-      <tr>
-        <th>Type</th>
-        <th>Latin Name</th>
-        <th>Status</th>
-        <th>Migration</th>
-        <th>Lifespan</th>
-        <th>Where Nest</th>
-        <th>Nesting Period</th>
-        <th>Number of Eggs</th>
-        <th>Type of Food</th>
-      </tr>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Latin Name</th>
+          <th>Status</th>
+          <th>Migration</th>
+          <th>Lifespan</th>
+          <th>Where Nest</th>
+          <th>Nesting Period</th>
+          <th>Number of Eggs</th>
+          <th>Type of Food</th>
+        </tr>
+      </thead>
+      <tbody>
       <tr>
         <td>Great Spotted Woodpecker</td>
         <td><em>Dendrocopos major</em></td>
@@ -555,6 +594,7 @@
         <td>5-6 eggs</td>
         <td>Insects, spiders</td>
       </tr>
+      </tbody>
     </table>
   </section>
   </div>
@@ -564,17 +604,20 @@
     <h2 id="water-table-title" class="sr-only">Water birds table</h2>
     <table>
       <caption class="kv">Water birds – lifespan, nesting and diet</caption>
-      <tr>
-        <th>Type</th>
-        <th>Latin Name</th>
-        <th>Status</th>
-        <th>Migration</th>
-        <th>Lifespan</th>
-        <th>Where Nest</th>
-        <th>Nesting Period</th>
-        <th>Number of Eggs</th>
-        <th>Type of Food</th>
-      </tr>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Latin Name</th>
+          <th>Status</th>
+          <th>Migration</th>
+          <th>Lifespan</th>
+          <th>Where Nest</th>
+          <th>Nesting Period</th>
+          <th>Number of Eggs</th>
+          <th>Type of Food</th>
+        </tr>
+      </thead>
+      <tbody>
       <tr>
         <td>Ash Headed Goose</td>
         <td><em>Chloephaga poliocephala</em></td>
@@ -938,6 +981,7 @@
         <td>3-5 eggs</td>
         <td>Seeds, insects</td>
       </tr>
+      </tbody>
     </table>
   </section>
   </div>
@@ -946,128 +990,131 @@
   <section class="table-responsive" aria-labelledby="seabirds-table-title">
     <h2 id="seabirds-table-title" class="sr-only">Seabirds table</h2>
     <table>
-      <caption class="kv">Seabirds – lifespan, nesting and diet</caption>
-      <tr>
-        <th>Type</th>
-        <th>Latin Name</th>
-        <th>Status</th>
-        <th>Migration</th>
-        <th>Lifespan</th>
-        <th>Where Nest</th>
-        <th>Nesting Period</th>
-        <th>Number of Eggs</th>
-        <th>Type of Food</th>
-      </tr>
-      <tr>
-        <td>Black-headed Gull</td>
-        <td><em>Chroicocephalus ridibundus</em></td>
-        <td><span class="status-badge lc">LC</span></td>
-        <td><span class="migration-dot resident"></span></td>
-        <td>10-15 years</td>
-        <td>Ground colonies</td>
-        <td>April - June</td>
-        <td>2-3 eggs</td>
-        <td>Fish, insects, worms</td>
-      </tr>
-      <tr>
-        <td>Brown Pelican</td>
-        <td><em>Pelecanus occidentalis</em></td>
-        <td><span class="status-badge lc">LC</span></td>
-        <td><span class="migration-dot resident"></span></td>
-        <td>15-25 years</td>
-        <td>Coastal cliffs, islands</td>
-        <td>March - May</td>
-        <td>2-3 eggs</td>
-        <td>Fish</td>
-      </tr>
-      <tr>
-        <td>Common Tern</td>
-        <td><em>Sterna hirundo</em></td>
-        <td><span class="status-badge lc">LC</span></td>
-        <td><span class="migration-dot summer"></span></td>
-        <td>10-15 years</td>
-        <td>Beaches, islands</td>
-        <td>May - July</td>
-        <td>2-3 eggs</td>
-        <td>Small fish</td>
-      </tr>
-      <tr>
-        <td>Curlew</td>
-        <td><em>Numenius arquata</em></td>
-        <td><span class="status-badge nt">NT</span></td>
-        <td><span class="migration-dot resident"></span></td>
-        <td>10-20 years</td>
-        <td>Moorland, grassland</td>
-        <td>April - May</td>
-        <td>4 eggs</td>
-        <td>Worms, insects, crustaceans</td>
-      </tr>
-      <tr>
-        <td>Eurasian Oystercatcher</td>
-        <td><em>Haematopus ostralegus</em></td>
-        <td><span class="status-badge nt">NT</span></td>
-        <td><span class="migration-dot resident"></span></td>
-        <td>10-15 years</td>
-        <td>Beaches, coastal areas</td>
-        <td>April - June</td>
-        <td>2-4 eggs</td>
-        <td>Molluscs, worms, crustaceans</td>
-      </tr>
-      <tr>
-        <td>Gannet</td>
-        <td><em>Morus bassanus</em></td>
-        <td><span class="status-badge lc">LC</span></td>
-        <td><span class="migration-dot resident"></span></td>
-        <td>15-20 years</td>
-        <td>Coastal cliffs, islands</td>
-        <td>April - May</td>
-        <td>1 egg</td>
-        <td>Fish</td>
-      </tr>
-      <tr>
-        <td>Guillemot</td>
-        <td><em>Uria aalge</em></td>
-        <td><span class="status-badge lc">LC</span></td>
-        <td><span class="migration-dot resident"></span></td>
-        <td>10-20 years</td>
-        <td>Sea cliffs</td>
-        <td>May - July</td>
-        <td>1 egg</td>
-        <td>Fish, marine invertebrates</td>
-      </tr>
-      <tr>
-        <td>Herring Gull</td>
-        <td><em>Larus argentatus</em></td>
-        <td><span class="status-badge lc">LC</span></td>
-        <td><span class="migration-dot resident"></span></td>
-        <td>10-15 years</td>
-        <td>Cliffs, rooftops</td>
-        <td>April - June</td>
-        <td>2-3 eggs</td>
-        <td>Fish, carrion, scraps</td>
-      </tr>
-      <tr>
-        <td>Kittiwake</td>
-        <td><em>Rissa tridactyla</em></td>
-        <td><span class="status-badge vu">VU</span></td>
-        <td><span class="migration-dot resident"></span></td>
-        <td>10-15 years</td>
-        <td>Sea cliffs</td>
-        <td>May - July</td>
-        <td>1-3 eggs</td>
-        <td>Fish, marine invertebrates</td>
-      </tr>
-      <tr>
-        <td>Little Egret</td>
-        <td><em>Egretta garzetta</em></td>
-        <td><span class="status-badge lc">LC</span></td>
-        <td><span class="migration-dot resident"></span></td>
-        <td>5-10 years</td>
-        <td>Trees, reedbeds</td>
-        <td>April - June</td>
-        <td>3-5 eggs</td>
-        <td>Fish, amphibians, insects</td>
-      </tr>
+      <caption class="kv">Seabirds - lifespan, nesting and diet</caption>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Latin Name</th>
+          <th>Status</th>
+          <th>Migration</th>
+          <th>Lifespan</th>
+          <th>Where Nest</th>
+          <th>Nesting Period</th>
+          <th>Number of Eggs</th>
+          <th>Type of Food</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Black-headed Gull</td>
+          <td><em>Chroicocephalus ridibundus</em></td>
+          <td><span class="status-badge lc">LC</span></td>
+          <td><span class="migration-dot resident"></span></td>
+          <td>10-15 years</td>
+          <td>Ground colonies</td>
+          <td>April - June</td>
+          <td>2-3 eggs</td>
+          <td>Fish, insects, worms</td>
+        </tr>
+        <tr>
+          <td>Brown Pelican</td>
+          <td><em>Pelecanus occidentalis</em></td>
+          <td><span class="status-badge lc">LC</span></td>
+          <td><span class="migration-dot resident"></span></td>
+          <td>15-25 years</td>
+          <td>Coastal cliffs, islands</td>
+          <td>March - May</td>
+          <td>2-3 eggs</td>
+          <td>Fish</td>
+        </tr>
+        <tr>
+          <td>Common Tern</td>
+          <td><em>Sterna hirundo</em></td>
+          <td><span class="status-badge lc">LC</span></td>
+          <td><span class="migration-dot summer"></span></td>
+          <td>10-15 years</td>
+          <td>Beaches, islands</td>
+          <td>May - July</td>
+          <td>2-3 eggs</td>
+          <td>Small fish</td>
+        </tr>
+        <tr>
+          <td>Curlew</td>
+          <td><em>Numenius arquata</em></td>
+          <td><span class="status-badge nt">NT</span></td>
+          <td><span class="migration-dot resident"></span></td>
+          <td>10-20 years</td>
+          <td>Moorland, grassland</td>
+          <td>April - May</td>
+          <td>4 eggs</td>
+          <td>Worms, insects, crustaceans</td>
+        </tr>
+        <tr>
+          <td>Eurasian Oystercatcher</td>
+          <td><em>Haematopus ostralegus</em></td>
+          <td><span class="status-badge nt">NT</span></td>
+          <td><span class="migration-dot resident"></span></td>
+          <td>10-15 years</td>
+          <td>Beaches, coastal areas</td>
+          <td>April - June</td>
+          <td>2-4 eggs</td>
+          <td>Molluscs, worms, crustaceans</td>
+        </tr>
+        <tr>
+          <td>Gannet</td>
+          <td><em>Morus bassanus</em></td>
+          <td><span class="status-badge lc">LC</span></td>
+          <td><span class="migration-dot resident"></span></td>
+          <td>15-20 years</td>
+          <td>Coastal cliffs, islands</td>
+          <td>April - May</td>
+          <td>1 egg</td>
+          <td>Fish</td>
+        </tr>
+        <tr>
+          <td>Guillemot</td>
+          <td><em>Uria aalge</em></td>
+          <td><span class="status-badge lc">LC</span></td>
+          <td><span class="migration-dot resident"></span></td>
+          <td>10-20 years</td>
+          <td>Sea cliffs</td>
+          <td>May - July</td>
+          <td>1 egg</td>
+          <td>Fish, marine invertebrates</td>
+        </tr>
+        <tr>
+          <td>Herring Gull</td>
+          <td><em>Larus argentatus</em></td>
+          <td><span class="status-badge lc">LC</span></td>
+          <td><span class="migration-dot resident"></span></td>
+          <td>10-15 years</td>
+          <td>Cliffs, rooftops</td>
+          <td>April - June</td>
+          <td>2-3 eggs</td>
+          <td>Fish, carrion, scraps</td>
+        </tr>
+        <tr>
+          <td>Kittiwake</td>
+          <td><em>Rissa tridactyla</em></td>
+          <td><span class="status-badge vu">VU</span></td>
+          <td><span class="migration-dot resident"></span></td>
+          <td>10-15 years</td>
+          <td>Sea cliffs</td>
+          <td>May - July</td>
+          <td>1-3 eggs</td>
+          <td>Fish, marine invertebrates</td>
+        </tr>
+        <tr>
+          <td>Little Egret</td>
+          <td><em>Egretta garzetta</em></td>
+          <td><span class="status-badge lc">LC</span></td>
+          <td><span class="migration-dot resident"></span></td>
+          <td>5-10 years</td>
+          <td>Trees, reedbeds</td>
+          <td>April - June</td>
+          <td>3-5 eggs</td>
+          <td>Fish, amphibians, insects</td>
+        </tr>
         <tr>
           <td>Rock Dove</td>
           <td><em>Columba livia</em></td>
@@ -1090,37 +1137,30 @@
           <td>4 eggs</td>
           <td>Insects, crustaceans</td>
         </tr>
+      </tbody>
     </table>
   </section>
   </div>
 
-  <div id="raptors-tab" class="tab-content" style="display: none;">
+    <div id="raptors-tab" class="tab-content" style="display: none;">
   <section class="table-responsive" aria-labelledby="raptors-table-title">
     <h2 id="raptors-table-title" class="sr-only">Raptors table</h2>
     <table>
-      <caption class="kv">Raptors – lifespan, nesting and diet</caption>
-      <tr>
-        <th>Type</th>
-        <th>Latin Name</th>
-      <tr>
-        <td>Jackdaw</td>
-        <td><em>Corvus monedula</em></td>
-        <td><span class="status-badge lc">LC</span></td>
-        <td><span class="migration-dot resident"></span></td>
-        <td>3-4 years</td>
-        <td>Buildings, trees, cliffs</td>
-        <td>April - July</td>
-        <td>3-6 eggs</td>
-        <td>Omnivorous: insects, seeds, small animals</td>
-      </tr>
-        <th>Status</th>
-        <th>Migration</th>
-        <th>Lifespan</th>
-        <th>Where Nest</th>
-        <th>Nesting Period</th>
-        <th>Number of Eggs</th>
-        <th>Type of Food</th>
-      </tr>
+      <caption class="kv">Raptors - lifespan, nesting and diet</caption>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Latin Name</th>
+          <th>Status</th>
+          <th>Migration</th>
+          <th>Lifespan</th>
+          <th>Where Nest</th>
+          <th>Nesting Period</th>
+          <th>Number of Eggs</th>
+          <th>Type of Food</th>
+        </tr>
+      </thead>
+      <tbody>
       <tr>
         <td>African Fish Eagle</td>
         <td><em>Haliaeetus vocifer</em></td>
@@ -1286,6 +1326,7 @@
         <td>2-4 eggs</td>
         <td>Small mammals, birds</td>
       </tr>
+      </tbody>
     </table>
   </section>
   </div>

@@ -1,3 +1,83 @@
+/* Bird Table Visual Controls */
+.bird-table-visual-controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.bird-thumb-col, .bird-star-col {
+  width: 40px;
+  text-align: center;
+  background: #f7f8fa;
+}
+.bird-thumb-cell {
+  width: 40px;
+  text-align: center;
+}
+.bird-thumb-img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.bird-thumb-placeholder {
+  display: inline-block;
+  font-size: 1.5em;
+  color: #c7d2e3;
+}
+.bird-star-cell {
+  width: 40px;
+  text-align: center;
+}
+.bird-star {
+  font-size: 1.4em;
+  color: #c7d2e3;
+  cursor: pointer;
+  transition: color 0.2s;
+  outline: none;
+}
+.bird-star.fav {
+  color: #f7b731;
+}
+.bird-star:focus {
+  color: #2a7ae2;
+}
+.bird-detail-row {
+  background: #eaf4ff;
+}
+.bird-detail-content {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 16px;
+}
+.bird-detail-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.bird-detail-note {
+  font-size: 1em;
+  color: var(--text, #103048);
+}
+.bird-detail-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--accent, #2a7ae2);
+  text-decoration: underline;
+  font-weight: bold;
+}
+@media (max-width: 700px) {
+  .bird-detail-content {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+}
 /* Bird Table Usability Toolbar */
 .bird-table-toolbar {
   display: flex;
@@ -31,6 +111,20 @@
 .bird-table-toolbar .btn:hover,
 .bird-table-toolbar .btn:focus {
   background: #1a5bb8;
+}
+.bird-images-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--text, #103048);
+  padding: 6px 10px;
+  border: 1px solid #c7d2e3;
+  border-radius: 8px;
+  background: #fff;
+}
+.bird-images-toggle input {
+  margin: 0;
 }
 .bird-table-count {
   font-size: 1rem;
@@ -85,6 +179,64 @@
 .table-responsive td,
 .table-responsive th {
   min-width: 80px;
+}
+.bird-thumb-col,
+.bird-thumb-cell {
+  width: 62px;
+  min-width: 62px;
+  text-align: center;
+}
+.thumb-cell {
+  position: relative;
+  overflow: visible;
+}
+.thumb-link {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  z-index: 1;
+}
+.bird-thumb-img,
+.thumb-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  transform-origin: center center;
+}
+.thumb-link:hover,
+.thumb-link:focus-visible {
+  z-index: 30;
+}
+.thumb-link:hover .thumb-img,
+.thumb-link:focus-visible .thumb-img {
+  transform: scale(2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.26);
+}
+.bird-thumb-placeholder,
+.thumb-placeholder {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 6px;
+  color: #9aa8b5;
+  background: #f3f6f9;
+  font-size: 1.1rem;
+}
+.table-responsive table {
+  overflow: visible;
+}
+.table-responsive tbody tr,
+.table-responsive tbody td {
+  position: relative;
+}
+.bird-images-hidden .bird-thumb-col,
+.bird-images-hidden .bird-thumb-cell {
+  display: none;
 }
 .table-responsive .no-results {
   text-align: center;

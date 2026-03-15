@@ -1,26 +1,15 @@
 // Bird Table Usability Enhancements
 (function() {
-  // Utility selectors
   const toolbar = document.querySelector('.bird-table-toolbar');
   const searchInput = document.getElementById('bird-table-search');
   const statusSelect = document.getElementById('bird-table-status');
   const migrationSelect = document.getElementById('bird-table-migration');
   const clearBtn = document.getElementById('bird-table-clear');
   const countSpan = document.getElementById('bird-table-count');
+  const showImagesToggle = document.getElementById('bird-table-show-images');
 
-  // Find all tabbed tables
-  function getActiveTable() {
-    // Find visible .tab-content or .table-responsive
-    const activeTab = document.querySelector('.tab-content.active, .table-responsive:visible');
-    if (!activeTab) return null;
-    return activeTab.querySelector('table');
-  }
+  if (!toolbar) return;
 
-  // Search/filter/sort state
-  let sortCol = null;
-  let sortDir = 1; // 1 = asc, -1 = desc
-
-  // Column index mapping
   const colMap = {
     type: 0,
     latin: 1,
@@ -33,10 +22,208 @@
     food: 8
   };
 
-  // Filtering logic
+  const tabFolderMap = {
+    'garden-tab': 'garden',
+    'countryside-tab': 'countryside',
+    'water-tab': 'water_birds',
+    'seabirds-tab': 'sea_birds',
+    'raptors-tab': 'birds_of_prey'
+  };
+
+  const explicitThumbs = {
+    'Blackbird': 'bird_photos/garden/blackbird.jpg',
+    'Blackcap': 'bird_photos/garden/black-cap.jpg',
+    'Blue Tit': 'bird_photos/garden/blue-tit.jpg',
+    'Bullfinch': 'bird_photos/garden/bullfinch.jpg',
+    'Chaffinch': 'bird_photos/garden/chaffinch.jpg',
+    'Coal Tit': 'bird_photos/garden/coal-tit.jpg',
+    'Dunnock': 'bird_photos/garden/dunnock.jpg',
+    'Goldfinch': 'bird_photos/garden/Goldfinch.jpg',
+    'Great Tit': 'bird_photos/garden/great-tit.jpg',
+    'House Sparrow': 'bird_photos/stock/house-sparrow.jpeg',
+    'Jackdaw': 'bird_photos/countryside/jackdaw_stock.jpg',
+    'Jay': 'bird_photos/garden/jay.jpg',
+    'Long-tailed Tit': 'bird_photos/garden/long-tail-tit.jpg',
+    'Magpie': 'bird_photos/garden/magpie.jpg',
+    'Nuthatch': 'bird_photos/garden/nuthatch.jpg',
+    'Redwing': 'bird_photos/garden/redwing.jpg',
+    'Robin': 'bird_photos/garden/robin.jpg',
+    'Song Thrush': 'bird_photos/garden/song-thrush.jpg',
+    'Tree Sparrow': 'bird_photos/stock/tree-sparrow.jpeg',
+    'Wood Pigeon': 'bird_photos/garden/wood-pigeon.jpg',
+    'Wren': 'bird_photos/garden/wren.jpg',
+    'Great Spotted Woodpecker': 'bird_photos/countryside/great_spotted_woodpecker.jpg',
+    'Green Woodpecker': 'bird_photos/countryside/green-woodpecker.jpg',
+    'Pheasant': 'bird_photos/countryside/pheasant.jpg',
+    'Rook': 'bird_photos/countryside/rook.jpg',
+    'Stonechat': 'bird_photos/countryside/stonechat.jpg',
+    'Red-legged Partridge': 'bird_photos/countryside/red_legged_partridge.jpg',
+    'Black-headed Gull': 'bird_photos/sea_birds/black-headed-gull.jpg',
+    'Brown Pelican': 'bird_photos/sea_birds/pelican.jpg',
+    'Common Tern': 'bird_photos/sea_birds/tern.jpg',
+    'Curlew': 'bird_photos/sea_birds/curlew.jpg',
+    'Eurasian Oystercatcher': 'bird_photos/sea_birds/eurasian-oystercatcher.jpg',
+    'Rock Dove': 'bird_photos/sea_birds/rock_dove.JPG',
+    'Turnstone': 'bird_photos/sea_birds/turnstone.jpg',
+    'African Fish Eagle': 'bird_photos/birds_of_prey/fish-eagle.jpg',
+    'Bald Eagle': 'bird_photos/birds_of_prey/bald-eagle.jpg',
+    'Barn Owl': 'bird_photos/birds_of_prey/barn-owl.jpg',
+    'Common Buzzard': 'bird_photos/birds_of_prey/common-buzzard.jpg',
+    'Golden Eagle': 'bird_photos/birds_of_prey/golden-eagle.jpg',
+    'Great Grey Owl': 'bird_photos/birds_of_prey/owl2.jpg',
+    'Griffon Vulture': 'bird_photos/birds_of_prey/vulture.jpg',
+    'Gyrfalcon': 'bird_photos/birds_of_prey/white-falcon.jpg',
+    'Hen Harrier': 'bird_photos/birds_of_prey/hen-harrier.jpg',
+    'Kestrel': 'bird_photos/stock/kestrel.jpg',
+    'Long Eared Owl': 'bird_photos/birds_of_prey/long-eared-owl.jpg',
+    'Peregrine Falcon': 'bird_photos/birds_of_prey/falcon1.jpg',
+    'Red Kite': 'bird_photos/birds_of_prey/red-kite.jpg',
+    'Tawny Owl': 'bird_photos/birds_of_prey/tawny-owl.jpg'
+  };
+
+  function photoToThumbPath(photoPath) {
+    return photoPath.replace('bird_photos/', 'bird_thumbs/');
+  }
+
+  function getActiveTable() {
+    const activeTab = document.querySelector('.tab-content.active');
+    if (!activeTab) return null;
+    return activeTab.querySelector('table');
+  }
+
+  function getDataCells(row) {
+    const cells = Array.from(row.cells);
+    if (cells[0] && cells[0].classList.contains('bird-thumb-cell')) {
+      return cells.slice(1);
+    }
+    return cells;
+  }
+
+  function getHeaderOffset(table) {
+    const firstHeader = table.tHead?.rows?.[0]?.cells?.[0];
+    return firstHeader && firstHeader.classList.contains('bird-thumb-col') ? 1 : 0;
+  }
+
+  function slugifyBirdName(name) {
+    return name
+      .toLowerCase()
+      .replace(/['().]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+  }
+
+  function getThumbCandidates(birdName, table) {
+    if (explicitThumbs[birdName]) {
+      return [explicitThumbs[birdName]];
+    }
+
+    const tab = table.closest('.tab-content');
+    const folder = tabFolderMap[tab?.id] || 'garden';
+    const slug = slugifyBirdName(birdName);
+    const underscore = slug.replace(/-/g, '_');
+
+    return [
+      `bird_photos/${folder}/${slug}.jpg`,
+      `bird_photos/${folder}/${slug}.jpeg`,
+      `bird_photos/${folder}/${underscore}.jpg`,
+      `bird_photos/${folder}/${underscore}.jpeg`
+    ];
+  }
+
+  function buildThumbCell(birdName, table) {
+    const cell = document.createElement('td');
+    cell.className = 'bird-thumb-cell thumb-cell';
+
+    const link = document.createElement('a');
+    link.className = 'thumb-link';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.setAttribute('aria-label', `Open full photo of ${birdName}`);
+
+    const placeholder = document.createElement('span');
+    placeholder.className = 'bird-thumb-placeholder thumb-placeholder';
+    placeholder.textContent = '◌';
+    placeholder.setAttribute('aria-label', 'No image');
+
+    const photoCandidates = getThumbCandidates(birdName, table);
+    const thumbCandidates = photoCandidates.map(photoToThumbPath);
+    const img = document.createElement('img');
+    img.className = 'bird-thumb-img thumb-img';
+    img.alt = `${birdName} thumbnail`;
+    img.loading = 'lazy';
+    img.style.display = 'none';
+
+    let candidateIndex = 0;
+    img.onload = function() {
+      img.style.display = '';
+      placeholder.style.display = 'none';
+      link.href = photoCandidates[candidateIndex];
+      link.style.display = '';
+    };
+    img.onerror = function() {
+      candidateIndex += 1;
+      if (candidateIndex < thumbCandidates.length) {
+        img.src = thumbCandidates[candidateIndex];
+      } else {
+        img.removeAttribute('src');
+        img.style.display = 'none';
+        placeholder.style.display = '';
+        link.removeAttribute('href');
+        link.style.display = 'none';
+      }
+    };
+
+    link.appendChild(img);
+    cell.appendChild(link);
+    cell.appendChild(placeholder);
+
+    if (thumbCandidates.length > 0) {
+      img.src = thumbCandidates[0];
+    }
+
+    return cell;
+  }
+
+  function injectThumbnailColumns() {
+    document.querySelectorAll('.table-responsive table').forEach(table => {
+      const headerRow = table.tHead?.rows?.[0];
+      if (!headerRow) return;
+
+      const hasThumbHeader = headerRow.cells[0] && headerRow.cells[0].classList.contains('bird-thumb-col');
+      if (!hasThumbHeader) {
+        const th = document.createElement('th');
+        th.className = 'bird-thumb-col';
+        th.textContent = 'Photo';
+        headerRow.insertBefore(th, headerRow.firstChild);
+      }
+
+      if (!table.tBodies[0]) return;
+      Array.from(table.tBodies[0].rows).forEach(row => {
+        if (row.classList.contains('no-results')) return;
+        const hasThumbCell = row.cells[0] && row.cells[0].classList.contains('bird-thumb-cell');
+        if (hasThumbCell) return;
+
+        const birdName = row.cells[0] ? row.cells[0].textContent.trim() : '';
+        const thumbCell = buildThumbCell(birdName, table);
+        row.insertBefore(thumbCell, row.firstChild);
+      });
+    });
+  }
+
+  function applyImageVisibilityState() {
+    const shouldShow = !showImagesToggle || showImagesToggle.checked;
+    document.body.classList.toggle('bird-images-hidden', !shouldShow);
+  }
+
+  let sortCol = null;
+  let sortDir = 1;
+
   function filterTable() {
     const table = getActiveTable();
-    if (!table) return;
+    if (!table || !table.tBodies[0]) return;
+
     const rows = Array.from(table.tBodies[0].rows);
     const search = searchInput.value.trim().toLowerCase();
     const status = statusSelect.value;
@@ -44,8 +231,11 @@
 
     let shown = 0;
     rows.forEach(row => {
-      const cells = row.cells;
-      // Search fields: Type, Latin, Nest, Food
+      if (row.classList.contains('no-results')) return;
+
+      const cells = getDataCells(row);
+      if (cells.length < 9) return;
+
       const text = [
         cells[colMap.type].textContent,
         cells[colMap.latin].textContent,
@@ -53,10 +243,9 @@
         cells[colMap.food].textContent
       ].join(' ').toLowerCase();
 
-      // Status badge
       const statusBadge = cells[colMap.status].querySelector('.status-badge');
-      const statusVal = statusBadge ? statusBadge.textContent : '';
-      // Migration dot
+      const statusVal = statusBadge ? statusBadge.textContent.trim() : '';
+
       const migrationDot = cells[colMap.migration].querySelector('.migration-dot');
       let migrationVal = '';
       if (migrationDot) {
@@ -72,125 +261,133 @@
       if (migration && migrationVal !== migration) visible = false;
 
       row.style.display = visible ? '' : 'none';
-      if (visible) shown++;
+      if (visible) shown += 1;
     });
 
-    // Show result count
     countSpan.textContent = `${shown} birds shown`;
 
-    // Show no results message
     let noResults = table.querySelector('.no-results');
     if (shown === 0) {
       if (!noResults) {
         noResults = document.createElement('tr');
         noResults.className = 'no-results';
-        noResults.innerHTML = `<td colspan="${table.tHead.rows[0].cells.length}">No results found</td>`;
+        noResults.innerHTML = `<td colspan="${table.tHead.rows[0].cells.length}">No birds match your filters</td>`;
         table.tBodies[0].appendChild(noResults);
       }
+      noResults.style.display = '';
     } else if (noResults) {
       noResults.remove();
     }
   }
 
-  // Sorting logic
-  function sortTable(colIdx) {
+  function sortTable(dataColIdx) {
     const table = getActiveTable();
-    if (!table) return;
-    const rows = Array.from(table.tBodies[0].rows).filter(r => r.style.display !== 'none');
-    // Remove no-results row if present
-    rows.filter(r => r.classList.contains('no-results')).forEach(r => r.remove());
+    if (!table || !table.tBodies[0]) return;
 
-    // Toggle direction
-    if (sortCol === colIdx) sortDir *= -1;
+    const headerOffset = getHeaderOffset(table);
+    const actualColIdx = dataColIdx + headerOffset;
+
+    const rows = Array.from(table.tBodies[0].rows).filter(r => !r.classList.contains('no-results'));
+    if (rows.length === 0) return;
+
+    if (sortCol === actualColIdx) sortDir *= -1;
     else sortDir = 1;
-    sortCol = colIdx;
+    sortCol = actualColIdx;
 
-    // Remove arrows from all headers
     Array.from(table.tHead.rows[0].cells).forEach(th => {
       const arrow = th.querySelector('.sort-arrow');
       if (arrow) arrow.remove();
     });
 
-    // Add arrow to sorted column
-    const th = table.tHead.rows[0].cells[colIdx];
-    const arrow = document.createElement('span');
-    arrow.className = 'sort-arrow';
-    arrow.textContent = sortDir === 1 ? '▲' : '▼';
-    th.appendChild(arrow);
+    const th = table.tHead.rows[0].cells[actualColIdx];
+    if (th) {
+      const arrow = document.createElement('span');
+      arrow.className = 'sort-arrow';
+      arrow.textContent = sortDir === 1 ? '▲' : '▼';
+      th.appendChild(arrow);
+    }
 
-    // Sort rows
     rows.sort((a, b) => {
-      let aVal = a.cells[colIdx].textContent.trim();
-      let bVal = b.cells[colIdx].textContent.trim();
-      // Numeric sort for eggs/lifespan
-      if (colIdx === colMap.lifespan || colIdx === colMap.eggs) {
+      const aCells = getDataCells(a);
+      const bCells = getDataCells(b);
+      let aVal = (aCells[dataColIdx]?.textContent || '').trim();
+      let bVal = (bCells[dataColIdx]?.textContent || '').trim();
+
+      if (dataColIdx === colMap.lifespan || dataColIdx === colMap.eggs) {
         aVal = parseFloat(aVal.replace(/[^0-9.]/g, '')) || 0;
         bVal = parseFloat(bVal.replace(/[^0-9.]/g, '')) || 0;
+      } else {
+        aVal = aVal.toLowerCase();
+        bVal = bVal.toLowerCase();
       }
+
       if (aVal < bVal) return -1 * sortDir;
       if (aVal > bVal) return 1 * sortDir;
       return 0;
     });
 
-    // Re-append sorted rows
     rows.forEach(row => table.tBodies[0].appendChild(row));
+    filterTable();
   }
 
-  // Attach event listeners
-  if (toolbar) {
-    searchInput.addEventListener('input', filterTable);
-    statusSelect.addEventListener('change', filterTable);
-    migrationSelect.addEventListener('change', filterTable);
-    clearBtn.addEventListener('click', function() {
-      searchInput.value = '';
-      statusSelect.value = '';
-      migrationSelect.value = '';
-      filterTable();
-    });
-  }
-
-  // Make headers sortable
   function makeHeadersSortable() {
     document.querySelectorAll('.table-responsive table').forEach(table => {
-      const ths = table.tHead.rows[0].cells;
-      // Sortable columns: Type, Latin Name, Lifespan, Nesting Period, Number of Eggs
-      [colMap.type, colMap.latin, colMap.lifespan, colMap.period, colMap.eggs].forEach(idx => {
-        ths[idx].classList.add('sortable');
-        ths[idx].tabIndex = 0;
-        ths[idx].setAttribute('role', 'button');
-        ths[idx].setAttribute('aria-label', 'Sort column');
-        ths[idx].addEventListener('click', () => sortTable(idx));
-        ths[idx].addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') sortTable(idx);
+      const headerRow = table.tHead?.rows?.[0];
+      if (!headerRow) return;
+
+      const headerOffset = getHeaderOffset(table);
+      const sortableDataCols = [colMap.type, colMap.latin, colMap.lifespan, colMap.period, colMap.eggs];
+
+      sortableDataCols.forEach(dataIdx => {
+        const th = headerRow.cells[dataIdx + headerOffset];
+        if (!th || th.dataset.sortBound === 'true') return;
+
+        th.classList.add('sortable');
+        th.tabIndex = 0;
+        th.setAttribute('role', 'button');
+        th.setAttribute('aria-label', `Sort by ${th.textContent.trim()}`);
+        th.addEventListener('click', () => sortTable(dataIdx));
+        th.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            sortTable(dataIdx);
+          }
         });
+        th.dataset.sortBound = 'true';
       });
     });
   }
 
-  // Sticky header polyfill for older browsers
-  function stickyHeaderPolyfill() {
-    // Modern browsers support position: sticky, but fallback if needed
-    // No-op for now, as most browsers support sticky
-  }
-
-  // Tab switching: re-filter and re-sort for new active table
   function handleTabSwitch() {
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         setTimeout(() => {
           filterTable();
-          makeHeadersSortable();
-        }, 100);
+        }, 10);
       });
     });
   }
 
-  // Initial setup
-  document.addEventListener('DOMContentLoaded', function() {
+  searchInput.addEventListener('input', filterTable);
+  statusSelect.addEventListener('change', filterTable);
+  migrationSelect.addEventListener('change', filterTable);
+  clearBtn.addEventListener('click', function() {
+    searchInput.value = '';
+    statusSelect.value = '';
+    migrationSelect.value = '';
     filterTable();
+  });
+
+  if (showImagesToggle) {
+    showImagesToggle.addEventListener('change', applyImageVisibilityState);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    injectThumbnailColumns();
     makeHeadersSortable();
+    applyImageVisibilityState();
+    filterTable();
     handleTabSwitch();
-    stickyHeaderPolyfill();
   });
 })();
 // Bird of the Month Archive (optional JS rendering)
