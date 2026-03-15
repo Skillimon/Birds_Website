@@ -26,16 +26,16 @@
 	      </button>
 	      <nav>
 	        <ul>
-	          <li><a href="index.html">Home</a></li>
-		      <li><a href="bird_data_table.html">Bird Info</a></li>
-		      <li><a href="garden_birds.html">Garden</a></li>
-		      <li><a href="countryside.html">Countryside</a></li>
-	          <li><a href="water_birds.html">Water</a></li>
+			  <li><a href="index.html">Home</a></li>
+			  <li><a href="bird_data_table.html">Bird Info</a></li>
+			  <li><a href="garden_birds.html">Garden</a></li>
+			  <li><a href="countryside.html">Countryside</a></li>
+			  <li><a href="water_birds.html">Water</a></li>
 			  <li><a href="sea_birds.html">Seabirds</a></li>
-	          <li><a href="birds_of_prey.html">Raptors</a></li>
-		      <li><a href="australia_birds.html">Australia</a></li>
-		      <li><a href="world.html">World</a></li>
-	          <li><a href="wildlife_garden.html">Wildlife Garden</a></li>
+			  <li><a href="birds_of_prey.html">Raptors</a></li>
+			  <li><a href="australia_birds.html">Australia</a></li>
+			  <li><a href="world.html">World</a></li>
+			  <li><a href="wildlife_garden.html">Wildlife Garden</a></li>
 			  <li><a href="conservation.html">Conservation</a></li>
 	        </ul>
 	      </nav>
@@ -45,16 +45,75 @@
 	  <main id="main-content" class="container">
 
 	    <section class="hero">
-	      <div class="hero-inner">
-	        <h1>Natural World Observations</h1>
-	        <p class="lead">A personal collection of bird and wildlife photographs, field notes and identification references. Browse galleries or jump to the reference table.</p>
-	        <div class="cta">
-	          <a class="btn" href="garden_birds.html">Browse Garden Birds</a>
-	          <a class="btn ghost" href="bird_data_table.html">Bird Info</a>
-	        </div>
-	      </div>
-	      <img src="bird_photos/slimbridge.jpg" alt="Slimbridge Wetlands" class="hero-image" loading="lazy" width="480" height="320">
-	    </section>
+			<div class="hero-inner">
+				<h1>Natural World Observations</h1>
+				<p class="lead">A personal collection of bird and wildlife photographs, field notes and identification references. Browse galleries or jump to the reference table.</p>
+				<div class="cta">
+					<a class="btn" href="garden_birds.html">Browse Garden Birds</a>
+					<a class="btn ghost" href="bird_data_table.html">Bird Info</a>
+				</div>
+			</div>
+			<img src="bird_photos/slimbridge.jpg" alt="Slimbridge Wetlands" class="hero-image" loading="lazy" width="480" height="320">
+		</section>
+
+		<!-- Bird of the Month section: place after hero -->
+		<section class="bird-of-month container" aria-labelledby="bird-of-month-title">
+			<div class="bird-of-month-grid">
+				<figure class="bird-of-month-image">
+					<img src="bird_photos/sea_birds/turnstone.jpg" alt="Turnstone (Arenaria interpres) on rocky shore" class="bird-of-month-img" />
+					<figcaption class="sr-only">Turnstone (Arenaria interpres)</figcaption>
+				</figure>
+				<div class="bird-of-month-content">
+					<h2 id="bird-of-month-title">Bird of the Month</h2>
+					<h3 class="bird-of-month-name">Turnstone <span class="latin-name"><em>Arenaria interpres</em></span></h3>
+					<p class="bird-of-month-desc">
+						The Turnstone is a small, robust wader famous for its habit of flipping stones and seaweed to uncover food. Often seen along rocky shores, it’s a passage migrant in the UK, delighting birdwatchers during spring and autumn migration.
+					</p>
+					<ul class="bird-of-month-facts">
+						<li><strong>Habitat:</strong> Rocky shores and coastal beaches</li>
+						<li><strong>Migration:</strong> Passage migrant in the UK</li>
+						<li><strong>Lifespan:</strong> up to 10–15 years</li>
+						<li><strong>Diet:</strong> Crustaceans, insects, worms and molluscs</li>
+						<li><strong>Name origin:</strong> Known for flipping stones and seaweed to find food</li>
+						<li><strong>UK sightings:</strong> Often seen during spring and autumn migration</li>
+					</ul>
+					<a href="sea_birds.html" class="btn bird-of-month-btn" aria-label="View Seabirds Gallery">View Seabirds Gallery</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Bird of the Month Archive section: place after Bird of the Month -->
+		<section class="bird-archive container" aria-labelledby="bird-archive-title">
+			<h2 id="bird-archive-title">Bird of the Month Archive <span aria-hidden="true">🐦</span></h2>
+			<div class="bird-archive-panel">
+				<h3 class="bird-archive-year">2026</h3>
+				<ul class="bird-archive-list">
+					<!-- To add a new month, copy the <li> below and update month, bird, category, and link -->
+					<li>
+						<a href="garden_birds.html" class="bird-archive-link">
+							<span class="bird-archive-month">January</span>
+							<span class="bird-archive-name">Robin</span>
+							<span class="bird-archive-category">Garden</span>
+						</a>
+					</li>
+					<li>
+						<a href="garden_birds.html" class="bird-archive-link">
+							<span class="bird-archive-month">February</span>
+							<span class="bird-archive-name">Goldfinch</span>
+							<span class="bird-archive-category">Garden</span>
+						</a>
+					</li>
+					<li>
+						<a href="sea_birds.html" class="bird-archive-link current">
+							<span class="bird-archive-month">March</span>
+							<span class="bird-archive-name">Turnstone</span>
+							<span class="bird-archive-category">Seabirds</span>
+							<span class="bird-archive-badge" aria-label="Current month">Current</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
 
 	    <section class="search-section">
 			<h2>Search for a Bird</h2>
@@ -95,6 +154,7 @@
 	    <section class="latest">
 	      <h2>Latest additions</h2>
 	      <ul class="latest-list">
+			<li>S Ives Mar 26, added Jackdaw, Turnstone, Rock Dove</li>
 			<li>Slimbridge (Mar 2026) new photos added</li>
 	        <li>Blackcap (2025) new male/female photos added</li>
 	        <li>Pelican (Cairns) new images added to Water Birds</li>

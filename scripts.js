@@ -1,3 +1,240 @@
+// Bird Table Usability Enhancements
+(function() {
+  // Utility selectors
+  const toolbar = document.querySelector('.bird-table-toolbar');
+  const searchInput = document.getElementById('bird-table-search');
+  const statusSelect = document.getElementById('bird-table-status');
+  const migrationSelect = document.getElementById('bird-table-migration');
+  const clearBtn = document.getElementById('bird-table-clear');
+  const countSpan = document.getElementById('bird-table-count');
+
+  // Find all tabbed tables
+  function getActiveTable() {
+    // Find visible .tab-content or .table-responsive
+    const activeTab = document.querySelector('.tab-content.active, .table-responsive:visible');
+    if (!activeTab) return null;
+    return activeTab.querySelector('table');
+  }
+
+  // Search/filter/sort state
+  let sortCol = null;
+  let sortDir = 1; // 1 = asc, -1 = desc
+
+  // Column index mapping
+  const colMap = {
+    type: 0,
+    latin: 1,
+    status: 2,
+    migration: 3,
+    lifespan: 4,
+    nest: 5,
+    period: 6,
+    eggs: 7,
+    food: 8
+  };
+
+  // Filtering logic
+  function filterTable() {
+    const table = getActiveTable();
+    if (!table) return;
+    const rows = Array.from(table.tBodies[0].rows);
+    const search = searchInput.value.trim().toLowerCase();
+    const status = statusSelect.value;
+    const migration = migrationSelect.value;
+
+    let shown = 0;
+    rows.forEach(row => {
+      const cells = row.cells;
+      // Search fields: Type, Latin, Nest, Food
+      const text = [
+        cells[colMap.type].textContent,
+        cells[colMap.latin].textContent,
+        cells[colMap.nest].textContent,
+        cells[colMap.food].textContent
+      ].join(' ').toLowerCase();
+
+      // Status badge
+      const statusBadge = cells[colMap.status].querySelector('.status-badge');
+      const statusVal = statusBadge ? statusBadge.textContent : '';
+      // Migration dot
+      const migrationDot = cells[colMap.migration].querySelector('.migration-dot');
+      let migrationVal = '';
+      if (migrationDot) {
+        if (migrationDot.classList.contains('resident')) migrationVal = 'resident';
+        else if (migrationDot.classList.contains('summer')) migrationVal = 'summer';
+        else if (migrationDot.classList.contains('winter')) migrationVal = 'winter';
+        else if (migrationDot.classList.contains('passage')) migrationVal = 'passage';
+      }
+
+      let visible = true;
+      if (search && !text.includes(search)) visible = false;
+      if (status && statusVal !== status) visible = false;
+      if (migration && migrationVal !== migration) visible = false;
+
+      row.style.display = visible ? '' : 'none';
+      if (visible) shown++;
+    });
+
+    // Show result count
+    countSpan.textContent = `${shown} birds shown`;
+
+    // Show no results message
+    let noResults = table.querySelector('.no-results');
+    if (shown === 0) {
+      if (!noResults) {
+        noResults = document.createElement('tr');
+        noResults.className = 'no-results';
+        noResults.innerHTML = `<td colspan="${table.tHead.rows[0].cells.length}">No results found</td>`;
+        table.tBodies[0].appendChild(noResults);
+      }
+    } else if (noResults) {
+      noResults.remove();
+    }
+  }
+
+  // Sorting logic
+  function sortTable(colIdx) {
+    const table = getActiveTable();
+    if (!table) return;
+    const rows = Array.from(table.tBodies[0].rows).filter(r => r.style.display !== 'none');
+    // Remove no-results row if present
+    rows.filter(r => r.classList.contains('no-results')).forEach(r => r.remove());
+
+    // Toggle direction
+    if (sortCol === colIdx) sortDir *= -1;
+    else sortDir = 1;
+    sortCol = colIdx;
+
+    // Remove arrows from all headers
+    Array.from(table.tHead.rows[0].cells).forEach(th => {
+      const arrow = th.querySelector('.sort-arrow');
+      if (arrow) arrow.remove();
+    });
+
+    // Add arrow to sorted column
+    const th = table.tHead.rows[0].cells[colIdx];
+    const arrow = document.createElement('span');
+    arrow.className = 'sort-arrow';
+    arrow.textContent = sortDir === 1 ? '▲' : '▼';
+    th.appendChild(arrow);
+
+    // Sort rows
+    rows.sort((a, b) => {
+      let aVal = a.cells[colIdx].textContent.trim();
+      let bVal = b.cells[colIdx].textContent.trim();
+      // Numeric sort for eggs/lifespan
+      if (colIdx === colMap.lifespan || colIdx === colMap.eggs) {
+        aVal = parseFloat(aVal.replace(/[^0-9.]/g, '')) || 0;
+        bVal = parseFloat(bVal.replace(/[^0-9.]/g, '')) || 0;
+      }
+      if (aVal < bVal) return -1 * sortDir;
+      if (aVal > bVal) return 1 * sortDir;
+      return 0;
+    });
+
+    // Re-append sorted rows
+    rows.forEach(row => table.tBodies[0].appendChild(row));
+  }
+
+  // Attach event listeners
+  if (toolbar) {
+    searchInput.addEventListener('input', filterTable);
+    statusSelect.addEventListener('change', filterTable);
+    migrationSelect.addEventListener('change', filterTable);
+    clearBtn.addEventListener('click', function() {
+      searchInput.value = '';
+      statusSelect.value = '';
+      migrationSelect.value = '';
+      filterTable();
+    });
+  }
+
+  // Make headers sortable
+  function makeHeadersSortable() {
+    document.querySelectorAll('.table-responsive table').forEach(table => {
+      const ths = table.tHead.rows[0].cells;
+      // Sortable columns: Type, Latin Name, Lifespan, Nesting Period, Number of Eggs
+      [colMap.type, colMap.latin, colMap.lifespan, colMap.period, colMap.eggs].forEach(idx => {
+        ths[idx].classList.add('sortable');
+        ths[idx].tabIndex = 0;
+        ths[idx].setAttribute('role', 'button');
+        ths[idx].setAttribute('aria-label', 'Sort column');
+        ths[idx].addEventListener('click', () => sortTable(idx));
+        ths[idx].addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') sortTable(idx);
+        });
+      });
+    });
+  }
+
+  // Sticky header polyfill for older browsers
+  function stickyHeaderPolyfill() {
+    // Modern browsers support position: sticky, but fallback if needed
+    // No-op for now, as most browsers support sticky
+  }
+
+  // Tab switching: re-filter and re-sort for new active table
+  function handleTabSwitch() {
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setTimeout(() => {
+          filterTable();
+          makeHeadersSortable();
+        }, 100);
+      });
+    });
+  }
+
+  // Initial setup
+  document.addEventListener('DOMContentLoaded', function() {
+    filterTable();
+    makeHeadersSortable();
+    handleTabSwitch();
+    stickyHeaderPolyfill();
+  });
+})();
+// Bird of the Month Archive (optional JS rendering)
+const birdArchiveEntries = [
+  {
+    year: 2026,
+    months: [
+      { month: 'January', name: 'Robin', category: 'Garden', link: 'garden_birds.html' },
+      { month: 'February', name: 'Goldfinch', category: 'Garden', link: 'garden_birds.html' },
+      { month: 'March', name: 'Turnstone', category: 'Seabirds', link: 'sea_birds.html', current: true }
+    ]
+  }
+];
+
+function renderBirdArchive(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = `
+    <section class="bird-archive container" aria-labelledby="bird-archive-title">
+      <h2 id="bird-archive-title">Bird of the Month Archive <span aria-hidden="true">🐦</span></h2>
+      <div class="bird-archive-panel">
+        ${birdArchiveEntries.map(entry => `
+          <h3 class="bird-archive-year">${entry.year}</h3>
+          <ul class="bird-archive-list">
+            ${entry.months.map(item => `
+              <li>
+                <a href="${item.link}" class="bird-archive-link${item.current ? ' current' : ''}">
+                  <span class="bird-archive-month">${item.month}</span>
+                  <span class="bird-archive-name">${item.name}</span>
+                  <span class="bird-archive-category">${item.category}</span>
+                  ${item.current ? '<span class="bird-archive-badge" aria-label="Current month">Current</span>' : ''}
+                </a>
+              </li>
+            `).join('')}
+          </ul>
+        `).join('')}
+      </div>
+    </section>
+  `;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  renderBirdArchive('bird-archive-js');
+});
 // scripts.js — small helpers (lightbox + mobile menu)
 (function(){
   let lastActive = null;
