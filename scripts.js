@@ -24,36 +24,36 @@
 
   const tabFolderMap = {
     'garden-tab': 'garden',
+    'woodland-tab': 'woodland',
     'countryside-tab': 'countryside',
     'water-tab': 'water_birds',
-    'seabirds-tab': 'sea_birds',
-    'raptors-tab': 'birds_of_prey'
+    'seabirds-tab': 'sea_birds'
   };
 
   const explicitThumbs = {
     'Blackbird': 'bird_photos/garden/blackbird.jpg',
-    'Blackcap': 'bird_photos/garden/black-cap.jpg',
+    'Blackcap': 'bird_photos/woodland/black-cap.jpg',
     'Blue Tit': 'bird_photos/garden/blue-tit.jpg',
     'Bullfinch': 'bird_photos/garden/bullfinch.jpg',
     'Chaffinch': 'bird_photos/garden/chaffinch.jpg',
-    'Coal Tit': 'bird_photos/garden/coal-tit.jpg',
+    'Coal Tit': 'bird_photos/woodland/coal-tit.jpg',
     'Dunnock': 'bird_photos/garden/dunnock.jpg',
     'Goldfinch': 'bird_photos/garden/Goldfinch.jpg',
     'Great Tit': 'bird_photos/garden/great-tit.jpg',
     'House Sparrow': 'bird_photos/stock/house-sparrow.jpeg',
     'Jackdaw': 'bird_photos/countryside/jackdaw_stock.jpg',
-    'Jay': 'bird_photos/garden/jay.jpg',
-    'Long-tailed Tit': 'bird_photos/garden/long-tail-tit.jpg',
+    'Jay': 'bird_photos/woodland/jay.jpg',
+    'Long-tailed Tit': 'bird_photos/woodland/long-tail-tit.jpg',
     'Magpie': 'bird_photos/garden/magpie.jpg',
-    'Nuthatch': 'bird_photos/garden/nuthatch.jpg',
+    'Nuthatch': 'bird_photos/woodland/nuthatch.jpg',
     'Redwing': 'bird_photos/garden/redwing.jpg',
     'Robin': 'bird_photos/garden/robin.jpg',
     'Song Thrush': 'bird_photos/garden/song-thrush.jpg',
     'Tree Sparrow': 'bird_photos/stock/tree-sparrow.jpeg',
     'Wood Pigeon': 'bird_photos/garden/wood-pigeon.jpg',
     'Wren': 'bird_photos/garden/wren.jpg',
-    'Great Spotted Woodpecker': 'bird_photos/countryside/great_spotted_woodpecker.jpg',
-    'Green Woodpecker': 'bird_photos/countryside/green-woodpecker.jpg',
+    'Great Spotted Woodpecker': 'bird_photos/woodland/great_spotted_woodpecker.jpg',
+    'Green Woodpecker': 'bird_photos/woodland/green-woodpecker.jpg',
     'Pheasant': 'bird_photos/countryside/pheasant.jpg',
     'Rook': 'bird_photos/countryside/rook.jpg',
     'Stonechat': 'bird_photos/countryside/stonechat.jpg',
@@ -65,20 +65,20 @@
     'Eurasian Oystercatcher': 'bird_photos/sea_birds/eurasian-oystercatcher.jpg',
     'Rock Dove': 'bird_photos/sea_birds/rock_dove.JPG',
     'Turnstone': 'bird_photos/sea_birds/turnstone.jpg',
-    'African Fish Eagle': 'bird_photos/birds_of_prey/fish-eagle.jpg',
-    'Bald Eagle': 'bird_photos/birds_of_prey/bald-eagle.jpg',
-    'Barn Owl': 'bird_photos/birds_of_prey/barn-owl.jpg',
-    'Common Buzzard': 'bird_photos/birds_of_prey/common-buzzard.jpg',
-    'Golden Eagle': 'bird_photos/birds_of_prey/golden-eagle.jpg',
-    'Great Grey Owl': 'bird_photos/birds_of_prey/owl2.jpg',
-    'Griffon Vulture': 'bird_photos/birds_of_prey/vulture.jpg',
-    'Gyrfalcon': 'bird_photos/birds_of_prey/white-falcon.jpg',
-    'Hen Harrier': 'bird_photos/birds_of_prey/hen-harrier.jpg',
+    'African Fish Eagle': 'bird_photos/world/fish-eagle.jpg',
+    'Bald Eagle': 'bird_photos/world/bald-eagle.jpg',
+    'Barn Owl': 'bird_photos/woodland/barn-owl.jpg',
+    'Common Buzzard': 'bird_photos/woodland/common-buzzard.jpg',
+    'Golden Eagle': 'bird_photos/world/golden-eagle.jpg',
+    'Great Grey Owl': 'bird_photos/woodland/owl2.jpg',
+    'Griffon Vulture': 'bird_photos/world/vulture.jpg',
+    'Gyrfalcon': 'bird_photos/world/white-falcon.jpg',
+    'Hen Harrier': 'bird_photos/countryside/hen-harrier.jpg',
     'Kestrel': 'bird_photos/stock/kestrel.jpg',
-    'Long Eared Owl': 'bird_photos/birds_of_prey/long-eared-owl.jpg',
-    'Peregrine Falcon': 'bird_photos/birds_of_prey/falcon1.jpg',
-    'Red Kite': 'bird_photos/birds_of_prey/red-kite.jpg',
-    'Tawny Owl': 'bird_photos/birds_of_prey/tawny-owl.jpg'
+    'Long Eared Owl': 'bird_photos/woodland/long-eared-owl.jpg',
+    'Peregrine Falcon': 'bird_photos/countryside/falcon1.jpg',
+    'Red Kite': 'bird_photos/woodland/red-kite.jpg',
+    'Tawny Owl': 'bird_photos/woodland/tawny-owl.jpg'
   };
 
   function photoToThumbPath(photoPath) {
@@ -582,10 +582,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // Database of birds and their locations across the site
   const birdDatabase = {
     'garden_birds.html': [
-      'Blackbird (F)', 'Blackbird (M)', 'Blackcap (F)', 'Blackcap (M)', 'Blue Tit', 'Bullfinch', 'Chaffinch (M)', 'Chaffinch (F)', 'Coal Tit', 'Dunnock', 'Goldfinch', 'Goldcrest', 'Great Tit', 'House Sparrow', 'Long Tailed Tit', 'Mistle Thrush', 'Nuthatch', 'Redwing', 'Robin', 'Song Thrush', 'Starling', 'Tree Sparrow', 'Wren', 'Wood Pigeon'
+      'Blackbird (F)', 'Blackbird (M)', 'Blue Tit', 'Bullfinch', 'Chaffinch (M)', 'Chaffinch (F)', 'Dunnock', 'Goldfinch', 'Great Tit', 'House Sparrow', 'Mistle Thrush', 'Redwing', 'Robin', 'Song Thrush', 'Starling', 'Tree Sparrow', 'Wren', 'Wood Pigeon'
     ],
     'countryside.html': [
-      'Collared Dove', 'Goldfinch', 'Green Woodpecker', 'Great Spotted Woodpecker', 'Jackdaw', 'Jay', 'Magpie', 'Red-legged Partridge', 'Pheasant', 'Rook', 'Stonechat'
+      'Collared Dove', 'Goldfinch', 'Jackdaw', 'Magpie', 'Red-legged Partridge', 'Pheasant', 'Rook', 'Stonechat', 'Kestrel', 'Hen Harrier', 'Peregrine Falcon'
     ],
     'water_birds.html': [
       'Ash Headed Goose', 'Barrows Goldeneye', 'Bufflehead', 'Common Goldeneye', 'Common Redshank', 'Common Crane', 'Coot', 'Coscoroba Swan', 'Egret', 'Little Grebe', 'Greylag Goose', 'Lesser White Fronted Goose', 'Bar Headed Goose', 'Canada Goose', 'Chiloe Wigeon', 'Flamingo', 'Garganey', 'Hooded Merganser', 'Common Kingfisher', 'Knob Billed Duck', 'Magellanic Goose', 'Mallard', 'Mallard Duck', 'Masked Lapwing', 'Mareca', 'Moorhen', 'Netta', 'Oxyura', 'Teal', 'Tufted Duck', 'Pied Avocet', 'Puna Teal', 'Redhead Duck', 'Red-breasted Merganser', 'Northern Pintail', 'Redshank', 'Ringed Teal', 'Ruddy Shelduck', 'Ruff', 'Common Sandpiper', 'Greater Scaup', 'Common Shelduck', 'Smew', 'Southern Screamer', 'Eurasian Spoonbill', 'Swan Goose', 'Mute Swan', 'Whooper Swan', 'Black Necked Swan', 'Water Rail', 'White-faced Whistling Duck', 'Wigeon', 'Chiloe Widgeon', 'Yellowhammer'
@@ -593,14 +593,14 @@ document.addEventListener('DOMContentLoaded', function() {
     'sea_birds.html': [
       'Black-headed Gull', 'Curlew', 'Eurasian Oystercatcher', 'Gannet', 'Great Cormorant', 'Guillemot', 'Egret', 'Gull', 'Kittiwake', 'Pelican', 'Tern'
     ],
-    'birds_of_prey.html': [
-      'Bald Eagle', 'Barn Owl', 'Barn Owl (landing)', 'Common Buzzard', 'Peregrine Falcon', 'African Fish Eagle', 'Golden Eagle', 'Hen Harrier', 'Kestrel', 'Long Eared Owl', 'Tawny Owl', 'Great Grey Owl', 'Red Kite', 'Griffon Vulture', 'Gyrfalcon'
+    'woodland.html': [
+      'Barn Owl', 'Great Grey Owl', 'Long Eared Owl', 'Tawny Owl', 'Sparrowhawk', 'Blackcap (F)', 'Blackcap (M)', 'Coal Tit', 'Goldcrest', 'Long Tailed Tit', 'Nuthatch', 'Jay', 'Great Spotted Woodpecker', 'Green Woodpecker', 'Common Buzzard', 'Red Kite'
     ],
     'australia_birds.html': [
       'Australian Magpie', 'Australian Ringneck', 'Bar Shouldered Dove', 'Black Parrot', 'Black Swan', 'Blue Faced Honeyeater', 'Brahminy Kite', 'Brush Turkey', 'Bush Stone Curlew', 'Butcher Bird', 'Cockatoo', 'Cockatoos', 'Ducula', 'Cormorant', 'Crimson Finch', 'Crimson Rosella', 'Egret', 'Emerald Dove', 'Emu', 'Fruit Dove', 'Galah', 'Greater Crested Tern', 'Green Ringneck Parrot', 'Jacada', 'Kingfisher', 'Kookaboro', 'Kookaboro 2', 'Little Pied Cormorant', 'Loon', 'Magpie Goose', 'Magpie Goose Flying', 'Masked Lapwing', 'Merops', 'Mute Swan', 'Peacock', 'Pelican', 'Pied Currawong', 'Pied Imperial Pigeon', 'Pied Oystercatcher', 'Red-collared Lorikeet', 'Shelduck', 'Spinifex Pigeon', 'Straw-necked Ibis', 'White-Bellied Sea Eagle', 'Wandering Whistling Duck', 'Welcome Swallow', 'White-Necked Heron', 'Yellow-Throated Miner'
     ],
     'world.html': [
-      'Common Myna', 'Limpkin', 'Ostrich', 'Penguin', 'Hoopoe', 'Hooded Crow', 'Otter', 'Red Whiskered Bulbul', 'Roulroul Partridge', 'Rose Ringed Parakeet', 'Seals', 'Turkey Vulture'
+      'Common Myna', 'Limpkin', 'Ostrich', 'Penguin', 'Hoopoe', 'Hooded Crow', 'Otter', 'Red Whiskered Bulbul', 'Roulroul Partridge', 'Rose Ringed Parakeet', 'Seals', 'Turkey Vulture', 'African Fish Eagle', 'Bald Eagle', 'Golden Eagle', 'Griffon Vulture', 'Gyrfalcon'
     ]
   };
 
@@ -609,7 +609,7 @@ document.addEventListener('DOMContentLoaded', function() {
     'countryside.html': 'Countryside Birds',
     'water_birds.html': 'Water Birds',
     'sea_birds.html': 'Seabirds',
-    'birds_of_prey.html': 'Raptors',
+    'woodland.html': 'Woodland',
     'australia_birds.html': 'Australian Birds',
     'world.html': 'World Birds'
   };
@@ -655,7 +655,7 @@ document.addEventListener('DOMContentLoaded', function() {
       'countryside.html',
       'water_birds.html',
       'sea_birds.html',
-      'birds_of_prey.html',
+      'woodland.html',
       'australia_birds.html',
       'world.html'
     ];
